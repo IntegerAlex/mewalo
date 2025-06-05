@@ -1,7 +1,0 @@
-Flask
-pymongo
-flask-pymongo
-python-dotenv
-gunicorn  
-flask-cors
-
