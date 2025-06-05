@@ -1,6 +1,5 @@
 from typing import Dict, Any, Tuple, Optional
-from jwt_extended import create_access_token
-
+from PyJWT import encode
 class AuthService:
     def __init__(self):
         self.pending_registrations: Dict[str, Dict] = {}
@@ -27,6 +26,6 @@ class AuthService:
     def verify_login_otp(self, phone: str, otp: str) -> Tuple[bool, str, Optional[str]]:
         if phone in self.pending_logins and otp == self.dummy_otp:
             self.pending_logins.pop(phone)
-            jwt_token = create_access_token({"phone": phone}, "secret-key", algorithm="HS256")
+            jwt_token = encode({"phone": phone}, "secret-key", algorithm="HS256")
             return True, "Login successful", jwt_token
         return False, "Invalid OTP", None

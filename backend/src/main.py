@@ -1,7 +1,6 @@
 from flask import Flask, jsonify
-import logging
 
-from config import get_config
+
 from utils.error_handlers import register_error_handlers
 
 # Import route blueprints
@@ -15,10 +14,6 @@ def create_app():
     
     # Create Flask app
     app = Flask(__name__)
-    
-    # Load configuration
-    config = get_config()
-    app.config.from_object(config)
     
     
     
