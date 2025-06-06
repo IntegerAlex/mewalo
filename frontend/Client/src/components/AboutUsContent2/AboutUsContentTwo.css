@@ -1,0 +1,209 @@
+#AboutUsContentTwo {
+    height: auto;
+    min-height: 70vh;
+    position: relative;
+    margin: 20px 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.AboutUsContentTwo {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.visionDiv-img {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-image: url('../../assets/images/aboutUsBanner2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 16px;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.visionDiv-content {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(231, 228, 228, 0.8);
+    width: 100%;
+    padding: 25px;
+    margin-top: 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.vision, .mission {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.vision-icon, .mission-icon {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.vision-title, .mission-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.vision-desc, .mission-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    #AboutUsContentTwo {
+        margin: 30px 0;
+        padding: 25px;
+    }
+    
+    .visionDiv-img {
+        height: 350px;
+    }
+    
+    .visionDiv-content {
+        padding: 30px;
+    }
+    
+    .vision-icon, .mission-icon {
+        font-size: 1.6rem;
+    }
+    
+    .vision-title, .mission-title {
+        font-size: 1.3rem;
+    }
+    
+    .vision-desc, .mission-desc {
+        font-size: 0.95rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #AboutUsContentTwo {
+        height: 60vh;
+        min-height: 500px;
+        margin: 40px 0;
+        padding: 0 40px;
+    }
+    
+    .AboutUsContentTwo {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .visionDiv-img {
+        position: absolute;
+        right: 40px;
+        top: 0;
+        height: 100%;
+        width: 45%;
+        margin-bottom: 0;
+    }
+    
+    .visionDiv-content {
+        width: 60%;
+        padding: 40px;
+        margin-top: 0;
+    }
+    
+    .vision-icon, .mission-icon {
+        font-size: 1.8rem;
+    }
+    
+    .vision-title, .mission-title {
+        font-size: 1.4rem;
+    }
+    
+    .vision-desc, .mission-desc {
+        font-size: 1rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    #AboutUsContentTwo {
+        height: 65vh;
+        min-height: 600px;
+    }
+    
+    .visionDiv-img {
+        width: 50%;
+    }
+    
+    .visionDiv-content {
+        width: 55%;
+        padding: 50px;
+        margin-top: 80px;
+    }
+    
+    .vision-icon, .mission-icon {
+        font-size: 2rem;
+    }
+    
+    .vision-title, .mission-title {
+        font-size: 1.5rem;
+    }
+    
+    .vision-desc, .mission-desc {
+        font-size: 1.05rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #AboutUsContentTwo {
+        max-width: 1200px;
+        margin: 40px auto;
+    }
+    
+    .visionDiv-content {
+        width: 60%;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1600px and up) */
+@media (min-width: 1600px) {
+    #AboutUsContentTwo {
+        max-width: 1400px;
+        height: 70vh;
+    }
+    
+    .visionDiv-content {
+        padding: 60px;
+    }
+    
+    .vision-icon, .mission-icon {
+        font-size: 2.2rem;
+    }
+    
+    .vision-title, .mission-title {
+        font-size: 1.6rem;
+    }
+    
+    .vision-desc, .mission-desc {
+        font-size: 1.1rem;
+    }
+}
+
+/* Ultra-wide devices (1920px and up) */
+@media (min-width: 1920px) {
+    #AboutUsContentTwo {
+        max-width: 1600px;
+    }
+    
+    .visionDiv-content {
+        padding: 70px;
+    }
+}

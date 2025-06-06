@@ -1,0 +1,91 @@
+/* Outer container-fluid with background */
+.contactUsBannerContainer {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactUsBannerContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../../assets/images/contactUsBanner.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(2px);
+  z-index: 0;
+  transform: scale(1.05);
+}
+
+/* Inner container for z-index layering */
+.contactUsBanner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactUs-text {
+  font-weight: 600;
+  z-index: 2;
+  /* color: black; */
+  color: #FFFFFF;
+  position: relative;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Responsive font sizes and heights */
+@media screen and (min-width: 320px) {
+  .contactUsBannerContainer { height: 30vh; }
+  .contactUs-text { font-size: 24px; }
+}
+
+@media screen and (min-width: 480px) {
+  .contactUsBannerContainer { height: 35vh; }
+  .contactUs-text { font-size: 28px; }
+}
+
+@media screen and (min-width: 600px) {
+  .contactUsBannerContainer { height: 40vh; }
+  .contactUs-text { font-size: 32px; }
+}
+
+@media screen and (min-width: 768px) {
+  .contactUsBannerContainer { height: 45vh; }
+  .contactUs-text { font-size: 36px; }
+}
+
+@media screen and (min-width: 1024px) {
+  .contactUsBannerContainer { height: 50vh; }
+  .contactUs-text { font-size: 40px; }
+}
+
+@media screen and (min-width: 1366px) {
+  .contactUsBannerContainer { height: 40vh; }
+  .contactUs-text { font-size: 42px; }
+}
+
+@media screen and (min-width: 1600px) {
+  .contactUsBannerContainer { height: 45vh; }
+  .contactUs-text { font-size: 48px; }
+}
+
+@media screen and (min-width: 1920px) {
+  .contactUsBannerContainer { height: 50vh; }
+  .contactUs-text { font-size: 56px; }
+}
+
+@media screen and (min-width: 2560px) {
+  .contactUsBannerContainer { height: 60vh; }
+  .contactUs-text { font-size: 64px; }
+}

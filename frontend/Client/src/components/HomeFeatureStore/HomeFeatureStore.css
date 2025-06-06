@@ -1,0 +1,65 @@
+
+#feature-store{
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+}
+
+
+.feature-store{
+    border: solid 1px;
+    height: 400px;
+    width: 400px;
+    border-radius: 18px;
+    position: relative;
+    cursor: pointer;
+}
+
+.feature-store-upper{
+    /* background-color: orange; */
+    height: 40%;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+.feature-store-circle {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden; /* Ensures image doesn't overflow the circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 110px;
+  left: 20px;
+}
+
+.feature-store-circle img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover; /* Makes sure the image fills the circle */
+  display: block;
+}
+
+
+.feature-store-bottom{
+    height: 60%;
+    padding-top: 70px;
+    padding-left: 40px;
+
+}
+
+.feature-store-title{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.feature-store-icon{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 10px;
+}

@@ -1,0 +1,157 @@
+
+#AboutUsTeam{
+    width: 100%;
+    height: 80vh;
+    padding-top: 50px;
+    /* border: 1px solid; */
+}
+
+.AboutUsTeam{
+    width: 100%;
+    /* border: solid 1px red; */
+}
+
+.aboutusTeam-Heading {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.aboutusTeam-title {
+  font-size: 24px;
+  font-weight: 300;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.aboutusTeam-subheading {
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutusTeam-line1 {
+  font-size: 42px;
+  font-weight: 600;
+  color: black;
+  line-height: 1.2;
+}
+
+.aboutusTeam-line2 {
+  font-size: 42px;
+  font-weight: 600;
+  /* color: #90EE90; light green */
+  color: yellow;
+  line-height: 1.2;
+}
+
+.aboutusTeam-container {
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.aboutusTeam-slider-wrapper {
+  height: auto;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.aboutusTeam-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  margin: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.aboutusTeam-card:hover {
+  transform: translateY(-5px);
+}
+
+.aboutusTeam-img-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.aboutusTeam-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.aboutusTeam-info {
+  padding: 20px;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutusTeam-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+
+.aboutusTeam-position {
+  font-size: 0.85rem;
+  color: var(--black);
+  font-weight: 400;
+}
+
+/* Responsive adjustments */
+@media (min-width: 640px) {
+  .aboutusTeam-img-container {
+    height: 180px;
+  }
+  
+  .aboutusTeam-name {
+    font-size: 1.1rem;
+  }
+  
+  .aboutusTeam-position {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .aboutusTeam-img-container {
+    height: 160px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aboutusTeam-img-container {
+    height: 200px;
+  }
+  
+  .aboutusTeam-name {
+    font-size: 1.2rem;
+  }
+  
+  .aboutusTeam-position {
+    font-size: 1rem;
+  }
+}
+
+/* Swiper navigation customization */
+.swiper-slide {
+  height: auto;
+}
+
+.mySwiper {
+  padding: 20px 0;
+}

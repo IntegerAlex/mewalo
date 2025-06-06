@@ -1,0 +1,89 @@
+/* Outer container-fluid now holds background */
+.aboutUsBannerContainer {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutUsBannerContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../../assets/images/AboutUsBanner11.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(0.5px);
+  z-index: 0;
+  transform: scale(1.05);
+}
+
+.aboutUsBanner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutUs-text {
+  font-weight: 600;
+  /* color: black; */
+  color: #FFFFFF;
+  position: relative;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Responsive height & font-size by screen size */
+@media screen and (min-width: 320px) {
+  .aboutUsBannerContainer { height: 30vh; }
+  .aboutUs-text { font-size: 24px; }
+}
+
+@media screen and (min-width: 480px) {
+  .aboutUsBannerContainer { height: 35vh; }
+  .aboutUs-text { font-size: 28px; }
+}
+
+@media screen and (min-width: 600px) {
+  .aboutUsBannerContainer { height: 40vh; }
+  .aboutUs-text { font-size: 32px; }
+}
+
+@media screen and (min-width: 768px) {
+  .aboutUsBannerContainer { height: 45vh; }
+  .aboutUs-text { font-size: 36px; }
+}
+
+@media screen and (min-width: 1024px) {
+  .aboutUsBannerContainer { height: 50vh; }
+  .aboutUs-text { font-size: 40px; }
+}
+
+@media screen and (min-width: 1366px) {
+  .aboutUsBannerContainer { height: 40vh; }
+  .aboutUs-text { font-size: 42px; }
+}
+
+@media screen and (min-width: 1600px) {
+  .aboutUsBannerContainer { height: 45vh; }
+  .aboutUs-text { font-size: 48px; }
+}
+
+@media screen and (min-width: 1920px) {
+  .aboutUsBannerContainer { height: 50vh; }
+  .aboutUs-text { font-size: 56px; }
+}
+
+@media screen and (min-width: 2560px) {
+  .aboutUsBannerContainer { height: 60vh; }
+  .aboutUs-text { font-size: 64px; }
+}

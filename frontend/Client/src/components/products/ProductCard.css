@@ -1,0 +1,88 @@
+.productCards{
+    width: 100%;
+    height: auto;
+    padding: 0px !important;
+    padding-left: 0px !important;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.productCard-item{
+    height: 450px;
+    width: 250px;
+    background-color: #FFFFFF;
+    position: relative;
+    border-bottom-left-radius: 120px;
+    border-bottom-right-radius: 120px;
+     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+     text-align: center;
+     animation:  superAppear linear;
+     animation-timeline: view();
+     animation-range: entry 0 cover 40% ;
+}
+
+
+.productCard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.productCard-title {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.productCard-type {
+  font-size: 14px;
+  /* color: #666; */
+}
+
+.productCard-prize {
+  font-size: 16px;
+  font-weight: bold;
+  /* color: #014034; */
+  color: #ffd700 !important;
+}
+
+
+@keyframes appear {
+  from{
+    opacity: 0;
+    /* scale: 0.5; */
+    /* transform: translateX(100px); */
+    /* clip-path: inset(100% 100% 0 0); */
+    /* filter: blur(5px) contrast(0.5) hue-rotate(90deg); */
+    /* transform: perspective(500px) rotate3d(1, 0.5, 0, 60deg);  */
+  }
+  to{
+    opacity: 1;
+    /* scale: 1;
+    transform: translateX(0px);
+    clip-path: inset(0 0 0 0); */
+    /* filter: blur(0) contrast(1) hue-rotate(0); */
+    /* transform: perspective(500px) rotate3d(0, 0, 0, 0); */
+  }
+}
+
+
+@keyframes superAppear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+    filter: sepia(1) brightness(1.2) saturate(5); /* makes a warm yellowish tone */
+    transform: perspective(500px) rotate3d(1, 0.5, 0, 60deg);
+    clip-path: inset(100% 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+    filter: none;
+    transform: perspective(500px) rotate3d(0, 0, 0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+}

@@ -1,0 +1,250 @@
+#AboutUSContent {
+    height: auto;
+    padding-top: 40px;
+}
+
+.AboutUSContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.AboutUsContent-left {
+    width: 100% !important;
+    height: auto;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.AboutUsContent-left iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    border-radius: 12px;
+}
+
+.AboutUsContent-right {
+    width: 100% !important;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.aboutUs-heading {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.aboutUs-title {
+    font-size: 24px;
+    width: 100%;
+    max-width: 100%;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.aboutUs-desc {
+    width: 100%;
+    max-width: 100%;
+    font-weight: 300;
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.aboutUs-ul-div {
+    margin-bottom: 20px;
+}
+
+.aboutUs-ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.aboutUs-li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.aboutUs-icon {
+    margin-right: 8px;
+    color: yellow;
+    flex-shrink: 0;
+    font-size: 18px;
+}
+
+.aboutUs-founder {
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    gap: 4px;
+    color: gray;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .AboutUSContent {
+        padding: 0 30px;
+    }
+    
+    .aboutUs-heading {
+        font-size: 17px;
+    }
+    
+    .aboutUs-title {
+        font-size: 26px;
+    }
+    
+    .aboutUs-desc {
+        font-size: 15px;
+    }
+    
+    .aboutUs-ul {
+        font-size: 17px;
+    }
+    
+    .aboutUs-founder {
+        font-size: 20px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .AboutUSContent {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    
+    .AboutUsContent-left {
+        width: 50% !important;
+        height: 400px;
+    }
+    
+    .AboutUsContent-left iframe {
+        height: 350px;
+    }
+    
+    .AboutUsContent-right {
+        width: 50% !important;
+        padding: 0;
+        padding-right: 20px;
+    }
+    
+    .aboutUs-heading {
+        font-size: 18px;
+    }
+    
+    .aboutUs-title {
+        font-size: 28px;
+        max-width: 80%;
+    }
+    
+    .aboutUs-desc {
+        font-size: 16px;
+        max-width: 90%;
+    }
+    
+    .aboutUs-ul {
+        font-size: 18px;
+    }
+    
+    .aboutUs-founder {
+        font-size: 22px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .AboutUSContent {
+        gap: 40px;
+        padding: 0 50px;
+    }
+    
+    .AboutUsContent-left {
+        height: 450px;
+    }
+    
+    .AboutUsContent-left iframe {
+        height: 400px;
+    }
+    
+    .aboutUs-title {
+        max-width: 70%;
+    }
+    
+    .aboutUs-desc {
+        max-width: 80%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #AboutUSContent {
+        padding-top: 70px;
+    }
+    
+    .AboutUSContent {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .AboutUsContent-left {
+        height: 500px;
+    }
+    
+    .AboutUsContent-left iframe {
+        height: 450px;
+    }
+    
+    .AboutUsContent-right {
+        padding-right: 40px;
+    }
+    
+    .aboutUs-title {
+        max-width: 60%;
+    }
+    
+    .aboutUs-desc {
+        max-width: 70%;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1600px and up) */
+@media (min-width: 1600px) {
+    .AboutUSContent {
+        max-width: 1400px;
+    }
+    
+    .aboutUs-heading {
+        font-size: 20px;
+    }
+    
+    .aboutUs-title {
+        font-size: 32px;
+    }
+    
+    .aboutUs-desc {
+        font-size: 17px;
+    }
+    
+    .aboutUs-ul {
+        font-size: 19px;
+    }
+    
+    .aboutUs-founder {
+        font-size: 24px;
+    }
+}

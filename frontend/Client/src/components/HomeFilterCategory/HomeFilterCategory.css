@@ -1,0 +1,29 @@
+#HomeFilterCategory{
+  width: 100%;
+  height: auto;
+  padding-top: 70px;
+}
+
+.HomeFilterCategory-heading{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.HomeFilterCategory-title{
+  font-size: 32px;
+  font-weight: 500;
+}
+
+
+.HomeFilterCategory-showmore{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 500;
+}

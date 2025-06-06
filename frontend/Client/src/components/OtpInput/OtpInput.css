@@ -1,0 +1,42 @@
+.otp{
+
+}
+
+/* Full screen center */
+.otp-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  max-width: 400px;
+  margin: 30px;
+}
+
+/* Centered input group */
+.otp-inputs {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Input style */
+.otpInput {
+  width: 40px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.otpInput:focus {
+  border-color: #007bff;
+}

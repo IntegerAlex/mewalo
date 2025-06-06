@@ -1,0 +1,68 @@
+#discount-section {
+  width: 100%;
+  padding-top: 70px;
+}
+
+.discount-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.discount-card {
+  height: 450px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 18px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  transition: transform 0.3s ease;
+}
+
+.discount-card:hover {
+  transform: scale(1.02);
+}
+
+.discount-content {
+  height: 40%;
+  padding: 20px;
+  background-color: #4caf50;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  color: black;
+}
+
+.discount-title {
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.discount-percentage {
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.discount-text {
+  font-weight: 300;
+  font-size: 14px;
+  max-width: 80%;
+}
+
+.discount-card-img-div {
+  height: 60%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.discount-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}

@@ -1,0 +1,48 @@
+
+#ContactUsDetails{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(240, 238, 238);
+    margin-top: 20px;
+}
+
+.contactUs-address, .contactUs-phone, .contactUs-mail{
+    height: 35vh;
+    width: 20%;
+    border-radius: 18px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    flex-direction: column;
+    border: 1px solid;
+    padding-top: 60px;
+    
+}
+
+
+.contactUs-address-icon, .contactUs-phone-icon, .contactUs-mail-icon{
+    height: 7vh;
+    width: 55px;
+    border-radius: 8px;
+    background-color: #FFE34D;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contactusAdress-title, .contactusPhone-title, .contactusMail-title{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contactusAddress-address{
+    max-width: 90%;
+}

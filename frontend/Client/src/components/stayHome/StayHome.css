@@ -1,0 +1,144 @@
+.stay-home-section {
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.stay-home-content {
+  background-color: #69124a;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px;
+  height: 60vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.stay-home-text {
+  flex: 1;
+  max-width: 600px;
+  color: white;
+  z-index: 2;
+}
+
+.stay-home-heading {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.market-text {
+  color: #4CAF50; /* Green color for "Our Market!" */
+}
+
+.download-text {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
+.download-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.store-badge {
+  height: auto;
+  width: 150px;
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.store-badge:hover {
+  transform: scale(1.05);
+}
+
+.stay-home-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  z-index: 1;
+}
+
+.delivery-boy-image {
+  height: 100%;
+  width: auto;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .stay-home-content {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .stay-home-content {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 40px 20px;
+  }
+  
+  .download-buttons {
+    justify-content: center;
+  }
+  
+  .stay-home-image {
+    margin-top: 30px;
+    width: 100%;
+  }
+  
+  .delivery-boy-image {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stay-home-section {
+    padding: 60px 0;
+  }
+  
+  .stay-home-content {
+    padding: 30px 15px;
+  }
+  
+  .stay-home-heading {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .stay-home-heading {
+    font-size: 1.8rem;
+  }
+  
+  .download-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .store-badge {
+    width: 130px;
+  }
+}

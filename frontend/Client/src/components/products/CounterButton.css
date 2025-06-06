@@ -1,0 +1,90 @@
+.counter-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.circle-button {
+  width: 60px;
+  height: 60px;
+  /* background-color: #014034; */
+  background-color: #ffd700 !important;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.rectangle-box {
+  display: flex;
+  align-items: center;
+  /* background-color: #014034; */
+  background-color: #ffd700 !important;
+  border-radius: 30px;
+  padding: 10px 20px;
+  gap: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-button {
+  background-color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  /* color: #014034; */
+  color: #ffd700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-value {
+  color: white;
+  font-size: 24px;
+  width: 30px;
+  text-align: center;
+  position: relative;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.counter-value.up {
+  animation-name: slideUp;
+}
+
+.counter-value.down {
+  animation-name: slideDown;
+}
+
+.productCard-total{
+  color: #ffd700;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

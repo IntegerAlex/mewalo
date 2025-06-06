@@ -1,0 +1,52 @@
+
+/* Base styles for all devices */
+.contact-map-container {
+  width: 100%;
+  height: 70vh; /* This will work now with proper parent structure */
+  min-height: 300px; /* Minimum height for very small screens */
+  margin: 0;
+  padding: 0;
+}
+
+.contact-map-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Mobile devices (320px - 480px) */
+@media screen and (max-width: 480px) {
+  .contact-map-container {
+    height: 50vh;
+    min-height: 250px;
+  }
+}
+
+/* Small tablets (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .contact-map-container {
+    height: 55vh;
+  }
+}
+
+/* Large tablets/landscape (769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .contact-map-container {
+    height: 60vh;
+  }
+}
+
+/* Desktops (1025px - 1200px) */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .contact-map-container {
+    height: 65vh;
+  }
+}
+
+/* Large desktops (1201px and up) */
+@media screen and (min-width: 1201px) {
+  .contact-map-container {
+    height: 70vh;
+  }
+}

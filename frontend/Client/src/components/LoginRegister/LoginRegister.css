@@ -1,0 +1,301 @@
+#LoginRegister {
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #f5f5f5;
+}
+
+.LoginRegister {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.login-part,
+.register-part {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s ease;
+    /* padding: 40px; */
+}
+.login-part{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 100px;
+}
+
+.login-part {
+    background-color: #f8f9fa;
+}
+
+.register-part {
+    background-color: #ffffff;
+}
+
+.boxCover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.boxCover-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+/* ------------------------------------------------------------ */
+/* Form styling */
+.login-part{
+    padding-top: 100px;
+}
+
+.login-form-title{
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.login-phone, .login-password{
+    width: 450px;
+    height: 50px;
+    border: solid 1px black;
+    border-radius: 48px;
+    background-color: white;
+    font-size: 22px;
+    font-weight: 600;
+    padding-left:30px ;
+    margin-bottom: 30px ;
+    /* margin-top: 40px; */
+}
+/* --------------------------------------------------------- */
+.register-part{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center !important;
+    padding-top: 30px;
+}
+
+.register-title{
+      font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.register-row1, .register-row3, .register-row4{
+    display: flex;
+    gap: 40px;
+    margin-bottom: 10px;
+}
+
+.register-row2{
+    margin-bottom: 10px;
+
+}
+
+.register-username , .register-useremail, .register-pincode, .register-phone, .register-password,.register-cpassword{
+width: 250px;
+    height: 50px;
+    border: solid 1px black;
+    border-radius: 48px;
+    background-color: white;
+    font-size: 22px;
+    font-weight: 400;
+    padding-left:30px ;
+    /* margin-bottom: 30px ; */
+}
+
+.register-username{
+    width: 200px !important;
+}
+
+.register-useremail{
+    width: 300px;
+}
+.register-address{
+    width: 520px;
+    /* height: 50px; */
+    border: solid 1px black;
+    /* border-radius: 48px; */
+    background-color: white;
+    font-size: 22px;
+    font-weight: 400;
+    padding-left:10px ;
+    /* margin-bottom: 30px ; */
+    margin-left: 10px;
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border-color: #ff4444;
+}
+
+.error-message {
+    color: #ff4444;
+    font-size: 0.8rem;
+    margin-top: 0px;
+    animation: slideDown 0.3s ease;
+}
+
+.form-footer {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.submit-btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.switch-form-text {
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.switch-link {
+    color: #2196F3;
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.switch-link:hover {
+    color: #0b7dda;
+    text-decoration: underline;
+}
+
+/* When register is active (default state) */
+.register-active .boxCover-img {
+    left: 0;
+}
+
+.register-active .register-part {
+    opacity: 1;
+    visibility: visible;
+}
+
+.register-active .login-part {
+    opacity: 0.8;
+}
+
+/* When login is active */
+.login-active .boxCover-img {
+    left: 50%;
+}
+
+.login-active .login-part {
+    opacity: 1;
+    visibility: visible;
+}
+
+.login-active .register-part {
+    opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .form-group {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    #LoginRegister {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .LoginRegister {
+        flex-direction: column;
+    }
+
+    .login-part,
+    .register-part {
+        width: 100%;
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .boxCover-img {
+        width: 100%;
+        height: 300px;
+        position: relative;
+    }
+
+    /* When login is active on mobile */
+    .login-active .boxCover-img {
+        left: 0;
+        order: -1;
+    }
+    
+    .register-active .boxCover-img {
+        order: -1;
+    }
+    
+    .form-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-title {
+        font-size: 1.5rem;
+    }
+    
+    .submit-btn {
+        width: 100%;
+    }
+}
