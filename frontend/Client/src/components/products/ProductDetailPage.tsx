@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./ProductDetailPage.css";
 import productImg from '../../assets/images/almond.png'
+import SubscribeComp from "../Subscribe/SubscribeComp";
+import JustForYou from "../JustForYou/JustForYou";
 
 const ProductDetailPage = () => {
   const [quantity, setQuantity] = useState(1);
@@ -14,7 +16,8 @@ const ProductDetailPage = () => {
   };
 
   return (
-    <div className="product-detail-container">
+    <>
+       <div className="product-detail-container">
       {/* Left Section */}
       <div className="product-image-section">
         <img src={productImg} alt="Green Apple" className="main-image" />
@@ -35,8 +38,8 @@ const ProductDetailPage = () => {
         </div> */}
 
         <div className="price">
-          <span className="discounted">$12.00</span>
-          <span className="original">$15.00</span>
+          <span className="discounted">760.00</span>
+          <span className="original">800.00</span>
         </div>
 
         <p className="description">
@@ -72,6 +75,12 @@ const ProductDetailPage = () => {
         
       </div>
     </div>
+
+    {/* ----- */}
+    <JustForYou/>
+    <SubscribeComp/>
+    </>
+   
   );
 };
 

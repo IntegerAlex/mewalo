@@ -24,13 +24,13 @@
 
 .slide-text {
   position: absolute;
-  bottom: 20%;
+  bottom: 10%;
   left: 10%;
-  color: white;
+  /* color: white; */
+  color: var(--primary-color);
   max-width: 50%;
-  /* background-color: rgba(0, 0, 0, 0.5); */
   padding: 20px;
-  /* border-radius: 5px; */
+  font-size: 32px;
 }
 
 .slider-navigation {
@@ -61,4 +61,29 @@
 
 .slider-arrow:hover {
   background: rgba(0, 0, 0, 0.8);
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    /* For Mobile Devices */
+  .home-slider-container {
+    height: 30vh;
+  }
+
+  .slide-text {
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+  color: white;
+  max-width: 50%;
+  padding: 5px;
+  font-size: 16px !important;
+}
+
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    /* For Small Tabs Devices */
+      .home-slider-container {
+    height: 40vh;
+  }
 }

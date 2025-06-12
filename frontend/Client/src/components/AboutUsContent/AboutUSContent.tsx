@@ -49,7 +49,7 @@ const AboutUSContent = () => {
               </ul>
             </div>
             <div className="aboutUs-founder">
-              TIWARI <AiFillStar color="gold" /> Founder
+              TIWARI <AiFillStar className="aboutus-star" /> Founder
             </div>
           </div>
         </div>

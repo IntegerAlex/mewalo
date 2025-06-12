@@ -48,6 +48,7 @@
     max-width: 100%;
     font-weight: 600;
     margin-bottom: 10px;
+    color: var(--dark-plum);
 }
 
 .aboutUs-desc {
@@ -79,9 +80,14 @@
 
 .aboutUs-icon {
     margin-right: 8px;
-    color: yellow;
+    /* color: yellow; */
+    color: var(--primary-color);
     flex-shrink: 0;
     font-size: 18px;
+}
+
+.aboutus-star{
+    color: var(--primary-color);
 }
 
 .aboutUs-founder {
@@ -90,7 +96,8 @@
     font-size: 18px;
     font-weight: 500;
     gap: 4px;
-    color: gray;
+    /* color: gray; */
+    color: var(--dark-plum);
 }
 
 /* Small devices (landscape phones, 576px and up) */

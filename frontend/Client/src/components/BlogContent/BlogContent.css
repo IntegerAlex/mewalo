@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 0px;
 }
 /* ------------------------------------------------- */
 #blogContent-heading{
@@ -23,6 +23,7 @@
     font-size: 24px;
     font-weight: 400;
     text-align: center;
+    color: var(--black);
 }
 
 .blogContent-heading2{
@@ -32,7 +33,8 @@
 }
 
 .blogContent-heading2>span{
-    color: #FFD700;
+    color: var(--dark-plum);
+    /* color: #FFD700; */
 }
 
 
@@ -48,7 +50,7 @@
 
 .blogContent-item{
     width: 100%;
-    padding: 40px;
+    padding: 20px;
     margin-bottom: 20px;
 }
 
@@ -109,12 +111,19 @@
     height: 45px;
     width: 180px;
     border-radius: 8px;
-    background-color: rgb(226, 226, 97);
-    color: black;
+    /* background-color: rgb(226, 226, 97); */
+    background-color: var(--background-color);
+    color:var(--dark-plum);
+    /* color: black; */
     outline: none;
     border: none;
 }
 
+.blogContent-readMore .blogContent-readMore-btn:hover{
+  cursor: pointer;
+  background-color: var(--background-color4);
+  color: var(--white);
+}
 /* ---------------------------------------- */
 /* Recent Blogs Container - Right Side */
 .recent-blogs {
@@ -135,7 +144,7 @@
 .Yellow-line {
   width: 5px;
   height: 30px;
-  background-color: var(--yellow);
+  background-color: var(--primary-color);
 }
 
 .recent-blog-content {
@@ -191,7 +200,8 @@
 }
 
 .recent-blog-item:hover .recent-blog-heading {
-  color: #FFD700;
+  /* color: #FFD700; */
+    color: var(--dark-plum);
 }
 
 .recent-blog-date {
@@ -225,100 +235,167 @@
 }
 
 .pagination-btn.active {
-  background-color: #FFD700;
+  /* background-color: #FFD700; */
+  background-color: var(--background-color);
   color: black;
-  border-color: #FFD700;
+  border-color:var(--dark-plum);
   font-weight: 600;
 }
 
+/* ===============================
+   RESPONSIVE DESIGN STYLES
+   =============================== */
 
-/* Responsive Breakpoints */
-@media (max-width: 1200px) {
-  .recent-blogs {
-    width: 35%;
+/* --------- For Tablets (768px and below) --------- */
+@media (max-width: 768px) {
+  .BlogContent {
+    flex-direction: column;
+    padding: 0 15px;
   }
-}
 
-@media (max-width: 992px) {
+  .blogContent {
+    width: 100%;
+  }
+
   .recent-blogs {
     width: 100%;
     padding-top: 40px;
   }
-  
-  .recent-blog-item {
-    gap: 15px;
+
+  .blogContent-title {
+    font-size: 22px;
+    max-width: 100%;
   }
-  
+
+  .blogContent-desc {
+    font-size: 14px;
+  }
+
+  .blogContent-img {
+    width: 100%;
+    height: auto !important;
+  }
+
+  .blogContent-name {
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+
+  .blogContent-readMore .blogContent-readMore-btn {
+    width: 100%;
+    font-size: 14px;
+  }
+
   .recent-blog-img {
     width: 100px;
     height: 100px;
     min-width: 100px;
   }
-  
+
   .recent-blog-heading {
     font-size: 16px;
   }
+
+  .recent-blogs-heading {
+    font-size: 20px;
+  }
+
+  .recent-blog-date {
+    font-size: 12px;
+  }
+
+  .blog-pagination {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .pagination-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
 }
 
-@media (max-width: 768px) {
+/* --------- For Small Devices / Mobile Phones (480px and below) --------- */
+@media (max-width: 480px) {
+  .blogContent-heading {
+    font-size: 18px;
+  }
+
+  .blogContent-heading2 {
+    font-size: 28px;
+  }
+
+  .blogContent {
+    padding: 0;
+  }
+
+  .blogContent-item {
+    padding: 20px 10px;
+  }
+
+  .blogContent-title {
+    font-size: 20px;
+  }
+
+  .blogContent-desc {
+    font-size: 13px;
+  }
+
+  .blogContent-readMore .blogContent-readMore-btn {
+    height: 40px;
+    font-size: 13px;
+  }
+
   .recent-blogs-heading {
-    font-size: 22px;
-    margin-bottom: 20px;
+    font-size: 18px;
   }
-  
-  .Yellow-line {
-    height: 25px;
-  }
-  
-  .recent-blog-content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  
+
   .recent-blog-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
-  
+
   .recent-blog-img {
     width: 100%;
-    height: 150px;
-    min-width: 100%;
+    height: auto;
   }
-}
 
-@media (max-width: 576px) {
-  .recent-blog-content {
-    grid-template-columns: 1fr;
+  .recent-blog-info {
+    width: 100%;
   }
-  
-  .recent-blogs-heading {
-    font-size: 20px;
-  }
-  
+
   .recent-blog-heading {
-    font-size: 17px;
+    font-size: 16px;
   }
-  
-  .recent-blog-date {
+
+  .blog-pagination {
+    justify-content: flex-start;
+  }
+
+  .pagination-btn {
     font-size: 13px;
+    padding: 6px 10px;
   }
 }
 
-@media (min-width: 1600px) {
-  .recent-blog-img {
-    width: 150px;
-    height: 150px;
-    min-width: 150px;
+/* --------- For Very Small Devices (360px and below) --------- */
+@media (max-width: 360px) {
+  .blogContent-heading2 {
+    font-size: 24px;
   }
-  
-  .recent-blog-heading {
-    font-size: 20px;
+
+  .blogContent-title {
+    font-size: 18px;
   }
-  
-  .recent-blog-date {
-    font-size: 15px;
+
+  .blogContent-readMore .blogContent-readMore-btn {
+    height: 36px;
+    font-size: 12px;
+  }
+
+  .pagination-btn {
+    padding: 5px 8px;
+    font-size: 12px;
   }
 }

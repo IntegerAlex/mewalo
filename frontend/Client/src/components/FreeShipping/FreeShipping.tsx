@@ -11,7 +11,7 @@ const FreeShipping = () => {
     {/* Free Delivery */}
     <div className="free-delivery">
         <div className="delivery-icon">
-            <LuPackageCheck fontSize="48px"/>
+            <LuPackageCheck className='free-icon' fontSize="48px"/>
         </div>
         <div className="delivery-text">
             <div className='freeDelivery-title'>
@@ -25,7 +25,7 @@ const FreeShipping = () => {
 
     {/* Flexible Payment */}
     <div className="flexible-payment">
-        <BsWallet2 fontSize="48px"/>
+        <BsWallet2 className='free-icon' fontSize="48px"/>
         <div className="payment-text">
             <div className='flexiblePayment-title'>
                 Flexible Payment
@@ -38,7 +38,7 @@ const FreeShipping = () => {
 
     {/* 24 x 7 Support */}
     <div className="support-24x7">
-        <FaHeadset fontSize="48px"/>
+        <FaHeadset className='free-icon' fontSize="48px"/>
         <div className="support-text">
             <div className='support-title'>
                 24 x 7 Support 

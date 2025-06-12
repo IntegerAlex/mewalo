@@ -5,6 +5,8 @@ import img from '../../assets/images/loginRegister.webp'
 import * as yup from 'yup'
 import { useFormik } from 'formik'
 import { useNavigate } from 'react-router-dom'
+import FreeShipping from '../FreeShipping/FreeShipping'
+import SubscribeComp from '../Subscribe/SubscribeComp'
 
 const registerSchema = yup.object().shape({
   username: yup.string().required('Username is required').min(3, 'Username must be at least 3 characters'),
@@ -66,79 +68,6 @@ const LoginRegister = () => {
       navigate('/otp')
     }
   })
-
-
-  // / Register API call
-  // const handleRegister = async (data) => {
-  //   try {
-  //     const response = await fetch('https://your-api-endpoint.com/register', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(data)
-  //     })
-
-  //     if (!response.ok) {
-  //       const errorData = await response.json()
-  //       throw new Error(errorData.message || 'Registration failed')
-  //     }
-
-  //     const result = await response.json()
-  //     setRegisterResponse(result)
-  //     // Optionally navigate or show success message
-  //     // navigate('/success-page')
-  //   } catch (err) {
-  //     setError(err.message)
-  //     console.error('Registration error:', err)
-  //   }
-  // }
-
-  // // Login API call
-  // const handleLogin = async (data) => {
-  //   try {
-  //     const response = await fetch('https://your-api-endpoint.com/login', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(data)
-  //     })
-
-  //     if (!response.ok) {
-  //       const errorData = await response.json()
-  //       throw new Error(errorData.message || 'Login failed')
-  //     }
-
-  //     const result = await response.json()
-  //     setLoginResponse(result)
-      
-  //     // Store token if available
-  //     if (result.token) {
-  //       localStorage.setItem('authToken', result.token)
-  //     }
-      
-  //     // Navigate to OTP page on successful login
-  //     navigate('/otp')
-  //   } catch (err) {
-  //     setError(err.message)
-  //     console.error('Login error:', err)
-  //   }
-  // }
-
-  //  useEffect(() => {
-  //   if (registerResponse) {
-  //     // Handle successful registration
-  //     console.log('Registration successful:', registerResponse)
-  //   }
-  // }, [registerResponse])
-
-  // useEffect(() => {
-  //   if (loginResponse) {
-  //     // Handle successful login
-  //     console.log('Login successful:', loginResponse)
-  //   }
-  // }, [loginResponse])
 
   return (
     <>
@@ -326,6 +255,9 @@ const LoginRegister = () => {
                 </div>
             </div>
         </div>
+
+        <FreeShipping/>
+        <SubscribeComp/>
     </>
   )
 }

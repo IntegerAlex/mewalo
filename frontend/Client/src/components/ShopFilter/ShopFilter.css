@@ -1,179 +1,163 @@
-/* Base Styles */
+/* =================================================== */
+/* SHOP FILTER COMPONENT STYLES */
+/* =================================================== */
+
+/**
+ * Base Layout Styles
+ * -------------------------------------------------- */
 .ShopFilter {
   display: flex;
   gap: 2rem;
   padding: 2rem 0;
 }
-/* ---------------------------------------------------------------------------------- */
-/* Filter Section Styles */
-/* Filters Container */
+
+#ShopFilter {
+  background-color: #f9f9f9;
+  /* background-color: var(--background-color); */
+  min-height: 100vh;
+}
+
+.container.ShopFilter {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/**
+ * Filter Section Styles
+ * -------------------------------------------------- */
 .Filters {
   position: sticky;
   top: 20px;
   height: fit-content;
-  background: #fff;
+  /* background: #fff; */
+  background-color: var(--background-color);
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   padding: 1.5rem;
   transition: all 0.3s ease;
   overflow: hidden;
+  width: 25%;
 }
 
-/* Category Filter Section */
 .category-filter {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
-.category-filter > div {
-  border-bottom: 1px solid #f0f0f0;
-  padding-bottom: 1.5rem;
+/**
+ * Dropdown Component Styles
+ * -------------------------------------------------- */
+.filter-dropdown {
+  border-bottom: 1px solid var(--dark-plum);
+  padding-bottom: 1rem;
 }
 
-.category-filter > div:last-child {
+.filter-dropdown:last-child {
   border-bottom: none;
 }
 
-/* Filter Headings */
-.category-filter > div > div:first-child {
+/* Dropdown header (clickable area) */
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #333;
-  margin-bottom: 1rem;
-  position: relative;
-  padding-left: 12px;
+  /* color: #333; */
+  color: var(--dark-plum);
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: all 0.2s ease;
 }
 
-.category-filter > div > div:first-child::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 16px;
-  background: #4CAF50;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+.dropdown-header:hover {
+  /* color: #4CAF50; */
+  color: var(--primary-color);
 }
 
-/* Filter Lists */
-.category-filter ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  padding-top: 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  animation: fadeIn 0.3s ease-out;
 }
 
-.category-filter li {
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+/* Checkbox item styles */
+.checkbox-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  position: relative;
-  overflow: hidden;
+  gap: 0.75rem;
+  padding: 0.5rem 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-/* Hover Effect */
-.category-filter li:hover {
+.checkbox-item:hover {
   background: rgba(76, 175, 80, 0.1);
-  transform: translateX(4px);
 }
 
-/* Active Filter */
-.category-filter li[data-active="true"],
-.category-filter li:active {
-  background: rgba(76, 175, 80, 0.15);
-  font-weight: 500;
-  color: #2E7D32;
-  transform: translateX(4px);
-}
-
-.category-filter li[data-active="true"]::before,
-.category-filter li:active::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 3px;
-  background: #4CAF50;
-}
-
-/* Radio Inputs */
-.category-filter input[type="radio"] {
+/* Custom checkbox styling */
+.checkbox-item input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border: 2px solid #ddd;
-  border-radius: 50%;
+  border-radius: 4px;
   outline: none;
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.category-filter input[type="radio"]:checked {
-  border-color: #4CAF50;
+.checkbox-item input[type="checkbox"]:checked {
+  border-color: var(--dark-plum);
+  /* background-color: #4CAF50; */
+  background-color: var(--primary-color);
 }
 
-.category-filter input[type="radio"]:checked::after {
-  content: '';
+.checkbox-item input[type="checkbox"]:checked::after {
+  content: '✓';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 8px;
-  height: 8px;
-  background: #4CAF50;
-  border-radius: 50%;
+  color: white;
+  font-size: 12px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .Filters {
-    position: relative;
-    top: 0;
-    margin-bottom: 2rem;
-    width: 100%;
-  }
+/**
+ * Products Display Section
+ * -------------------------------------------------- */
+.filter-product-cards {
+  width: 75%;
+}
 
-  .category-filter {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
+/* Product grid layout */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
 
-  .category-filter > div {
-    flex: 1 1 200px;
-    border-bottom: none;
-    padding-bottom: 0;
+/**
+ * Animations
+ * -------------------------------------------------- */
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(-10px);
   }
-
-  .category-filter > div > div:first-child {
-    cursor: pointer;
-  }
-
-  .category-filter ul {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-  }
-
-  .category-filter > div.active ul {
-    max-height: 500px;
-    transition: max-height 0.5s ease-in;
+  to { 
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Animation for Mobile */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -185,55 +169,11 @@
   }
 }
 
-@media (max-width: 768px) {
-  .category-filter > div.active ul li {
-    animation: slideDown 0.3s ease forwards;
-  }
-
-  .category-filter > div.active ul li:nth-child(1) { animation-delay: 0.1s; }
-  .category-filter > div.active ul li:nth-child(2) { animation-delay: 0.2s; }
-  .category-filter > div.active ul li:nth-child(3) { animation-delay: 0.3s; }
-  .category-filter > div.active ul li:nth-child(4) { animation-delay: 0.4s; }
-  .category-filter > div.active ul li:nth-child(5) { animation-delay: 0.5s; }
-}
-
-/* Product Cards Section */
-.filter-product-cards {
-  width: 70%;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-/* Animation for filter items */
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.filter-item {
-  animation: slideIn 0.4s ease forwards;
-  opacity: 0;
-}
-
-.filter-item:nth-child(1) { animation-delay: 0.1s; }
-.filter-item:nth-child(2) { animation-delay: 0.2s; }
-.filter-item:nth-child(3) { animation-delay: 0.3s; }
-.filter-item:nth-child(4) { animation-delay: 0.4s; }
-.filter-item:nth-child(5) { animation-delay: 0.5s; }
-.filter-item:nth-child(6) { animation-delay: 0.6s; }
-
-/* Responsive Styles */
+/**
+ * Responsive Design
+ * -------------------------------------------------- */
 @media (max-width: 992px) {
+  /* Tablet layout */
   .ShopFilter {
     flex-direction: column;
   }
@@ -241,44 +181,57 @@
   .Filters, .filter-product-cards {
     width: 100%;
   }
-  
+
+  .Filters {
+    position: static;
+    margin-bottom: 1.5rem;
+  }
+
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
+  /* Mobile layout */
+  .filter-dropdown {
+    padding-bottom: 0.5rem;
+  }
+
+  .dropdown-header {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .checkbox-item {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.5rem;
+  }
+
   .product-grid {
     grid-template-columns: 1fr;
   }
+
+  /* Animation delays for mobile dropdown items */
+  .dropdown-content .checkbox-item:nth-child(1) { animation-delay: 0.1s; }
+  .dropdown-content .checkbox-item:nth-child(2) { animation-delay: 0.2s; }
+  .dropdown-content .checkbox-item:nth-child(3) { animation-delay: 0.3s; }
+  .dropdown-content .checkbox-item:nth-child(4) { animation-delay: 0.4s; }
+  .dropdown-content .checkbox-item:nth-child(5) { animation-delay: 0.5s; }
 }
 
-/* ----------------------------------------------------------- */
-
-/* Main layout */
-.ShopFilter {
-  display: flex;
-  gap: 20px;
+@media (max-width: 480px) {
+  /* Small mobile adjustments */
+  .container.ShopFilter {
+    padding: 0 1rem;
+  }
+  
+  .Filters {
+    padding: 1rem;
+  }
 }
 
-.Filters {
-  width: 30%;
-}
-
-.products-display {
-  width: 70%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.product-card-wrapper {
-  width: 100%;
-  overflow: hidden;
-}
-
-/* Ensure ProductCard doesn't overflow */
-.ProductCard {
-  max-width: 100%;
-  height: auto;
-}
+/**
+ * Utility Classes
+ * -------------------------------------------------- */
+/* Add any utility classes here if needed */

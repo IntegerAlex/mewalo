@@ -57,7 +57,9 @@ const OtpInput: React.FC<OtpInputProps> = ({ length = 6, onOtpSubmit = () => {} 
             key={index}
             type="text"
             value={value}
-            ref={(el) => (inputRefs.current[index] = el)}
+            ref={(el) => {
+  inputRefs.current[index] = el;
+}}
             onChange={(e) => handleChange(index, e)}
             onClick={() => handleClick(index)}
             onKeyDown={(e) => handleKeyDown(index, e)}

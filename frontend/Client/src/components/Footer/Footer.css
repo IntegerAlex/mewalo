@@ -1,6 +1,7 @@
 .footer {
+  background-color: var(--background-color);
   /* background: #FFFFFF; */
-  background-color: #ffd700 !important;
+  /* background-color: #ffd700 !important; */
   /* background: #FFD700; */
   /* background-color: #014034; */
   /* color: white; */
@@ -8,7 +9,7 @@
   /* padding: 30px 20px; */
   /* font-size: 28px !important; */
   /* border: solid 1px; */
-  padding-top: 90px;
+  padding-top: 80px;
   padding-left: 20px;
 
   /* background-color: #FFEB7A; */
@@ -33,19 +34,21 @@
 }
 
 .footer-logo {
-  height: 60px;
-  margin-bottom: 15px;
+  height: 90px;
+  margin-bottom: 5px;
+  cursor: pointer;
 }
 
 .footer-info {
   list-style: none;
   padding: 0;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+  
 }
 
 .footer-info li {
   margin-bottom: 5px;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .footer-social,
@@ -58,7 +61,8 @@
 .footer-social a,
 .footer-payment a {
   /* color: rgb(3, 3, 56); */
-  color: #000000;
+  /* color: #000000; */
+  color: var(--primary-color);
   margin-right: 10px;
   font-size: 24px;
   transition: color 0.3s ease;
@@ -69,8 +73,9 @@
 }
 
 .footer-heading {
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom: 12px;
+  color: var(--primary-color);
 }
 
 .footer-links {
@@ -89,7 +94,6 @@
 .footer-links a {
   /* color: rgb(3, 3, 56); */
   color: #000000;
-
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -213,10 +217,31 @@
   }
 }
 @media (max-width: 480px) {
+  .footer{
+    padding-top: 20px;
+  }
   .footer-container {
     padding: 1rem;
     text-align: center; /* Added for base container */
   }
+
+  .footer-box {
+  margin-bottom: 5px;
+}
+
+.footer-logo {
+  height: 60px;
+  margin-bottom: 5px;
+}
+
+.footer-info {
+  margin-bottom: 5px;
+}
+
+.footer-info li {
+  /* margin-bottom: 5px; */
+  font-size: 18px;
+}
 
   .footer-content {
     flex-direction: column;
@@ -231,10 +256,11 @@
     width: 100%; /* Take full width */
   }
 
-  .footer-item,
+  /* .footer-item, */
   .footer-link {
     font-size: 0.75rem;
-    justify-content: center; /* Center flex items */
+    justify-content: center; 
+    margin-bottom: 10px !important;
   }
 
   .copyright {
@@ -247,6 +273,7 @@
     text-align: center;
     width: 100%; /* Ensure full width */
     padding: 0; /* Remove any default padding */
+    margin-bottom: 5px ;
   }
 
   .footer-links li {

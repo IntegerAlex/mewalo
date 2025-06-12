@@ -3,8 +3,13 @@ import { Button } from 'react-bootstrap'
 import { FaArrowRightLong } from "react-icons/fa6";
 import ProductCard from '../products/ProductCard';
 import { mostSellingData } from '../../data/mostSelling'
+import { useNavigate } from 'react-router-dom';
 
 const JustForYou = () => {
+  const navigate = useNavigate()
+      const showShopPage = () => {
+      navigate('/shop');
+    };
   return (
     <>
             <div className="container-fluid MostSelling py-4">
@@ -14,7 +19,7 @@ const JustForYou = () => {
           <h2 className="mostSelling-title m-0">
            Just for you
           </h2>
-          <div className="mostSelliing-seeMore d-flex align-items-center gap-2">
+          <div className="mostSelliing-seeMore d-flex align-items-center gap-2" onClick={showShopPage}>
             <Button variant="link" className='mostSelliing-seeMore-btn p-0'>
               See More
             </Button>

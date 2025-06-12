@@ -5,8 +5,8 @@ import AboutUsBanner from '../components/AboutUsBanner/AboutUsBanner'
 import AboutUSContent from '../components/AboutUsContent/AboutUSContent'
 import AboutUsContentTwo from '../components/AboutUsContent2/AboutUsContentTwo'
 import AboutUsTeam from '../components/AboutUsTeam/AboutUsTeam'
-import Testimonial from '@/components/testimonials/Testimonial'
 import FreeShipping from '@/components/FreeShipping/FreeShipping'
+import Testimonial from '@/components/testimonials/Testimonial'
 
 const AboutUsPage = () => {
   return (
@@ -15,7 +15,8 @@ const AboutUsPage = () => {
       <AboutUSContent/>
       <AboutUsContentTwo/>
       {/* <Testimonial/> */}
-      <HomeFeatureStore/>
+      {/* <HomeFeatureStore/> */}
+      <Testimonial/>
       <AboutUsTeam/>
       <FreeShipping/>
       <SubscribeComp/>

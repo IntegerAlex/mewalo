@@ -16,6 +16,7 @@ import SubscribeComp from '../components/Subscribe/SubscribeComp'
 import JustForYou from '../components/JustForYou/JustForYou'
 import HomeFilterCategory from '../components/HomeFilterCategory/HomeFilterCategory'
 import FreeShipping from '@/components/FreeShipping/FreeShipping'
+import Testimonial from '@/components/testimonials/Testimonial'
 
 const HomePage = () => {
   return (
@@ -23,11 +24,12 @@ const HomePage = () => {
       <HomeBg/>
       <CategoryBox/>
       <HomePageProducts/>
-      <HomeFeatureStore/>
+      {/* <HomeFeatureStore/> */}
       <HomeDiscount/>
-      <HomeFilterCategory/>
+      {/* <HomeFilterCategory/> */}
       <StayHome/>
       <MostSelling/>
+      <Testimonial/>
       <HomeCouponCard/>
       <JustForYou/>
       <FreeShipping/>

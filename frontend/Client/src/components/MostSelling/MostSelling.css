@@ -1,52 +1,171 @@
-
-.MostSelling{
-    padding-top: 30px;
-    width: 100%;
-    height: auto;
-    padding-bottom: 50px !important;
+/* MostSelling Section - Base Styles (Desktop First) */
+.MostSelling {
+  padding-top: 30px;
+  width: 100%;
+  height: auto;
+  padding-bottom: 30px;
 }
 
-.mostSelling-heading{
-    height: 20vh;
-    width: 100%;
-    /* border: solid 1px; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #014034;
+/* Heading Container */
+.mostSelling-heading {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--primary-color)
 }
 
-.mostSelling-title{
-    font-size: 32px;
-    font-weight: 600;
-    
+/* Main Title Styles */
+.mostSelling-title {
+  font-size: 32px;
+  font-weight: 600;
 }
 
-.mostSelliing-seeMore{
-    background-color: transparent;
-    height: auto;
-    width: fit-content;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+/* See More Button Container */
+.mostSelliing-seeMore {
+  background-color: transparent;
+  height: auto;
+  width: fit-content;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: transform 0.3s ease; /* Smooth hover transition */
 }
 
-.mostSelliing-seeMore:hover{
-    transform: scale(1.3);
+/* See More Button Text */
+.mostSelliing-seeMore-btn {
+  outline: none;
+  border: none;
+  color: var(--dark-plum);
+  font-size: 22px;
+  font-weight: 300;
+  text-decoration: none;
+  background-color: transparent;
+  transition: color 0.3s ease; /* Smooth color transition */
 }
 
-.mostSelliing-seeMore-btn{
-    outline: none;
-    border: none;
-    color: red;
-    font-size: 22px;
-    font-weight: 300;
-    background-color: transparent;
+/* Hover Effects */
+.mostSelliing-seeMore:hover {
+  transform: scale(1.1); /* More subtle scaling for better UX */
 }
 
+.mostSelliing-seeMore-btn:hover {
+  cursor: pointer;
+  color: var(--primary-color);
+}
 
-.mostSelliing-seeMore-btn:hover{
-    background-color: transparent;
-    cursor: pointer;
-    color: red;
+/* ============ RESPONSIVE ADJUSTMENTS ============ */
+
+/* Large Tablets (992px - 1200px) */
+@media (max-width: 1200px) {
+  .MostSelling {
+    padding-top: 25px;
+    padding-bottom: 40px;
+  }
+  
+  .mostSelling-heading {
+    height: 18vh;
+  }
+  
+  .mostSelling-title {
+    font-size: 28px;
+  }
+  
+  .mostSelliing-seeMore-btn {
+    font-size: 20px;
+  }
+}
+
+/* Medium Tablets (768px - 991px) */
+@media (max-width: 991px) {
+  .MostSelling {
+    padding-top: 20px;
+    padding-bottom: 35px;
+  }
+  
+  .mostSelling-heading {
+    height: 15vh;
+  }
+  
+  .mostSelling-title {
+    font-size: 24px;
+  }
+  
+  .mostSelliing-seeMore-btn {
+    font-size: 18px;
+  }
+  
+  .mostSelliing-seeMore:hover {
+    transform: scale(1.05); /* Reduce hover effect on smaller screens */
+  }
+}
+
+/* Small Tablets and Large Phones (576px - 767px) */
+@media (max-width: 767px) {
+  .MostSelling {
+    padding-top: 15px;
+    padding-bottom: 30px;
+  }
+  
+  .mostSelling-heading {
+    height: 12vh;
+  }
+  
+  .mostSelling-title {
+    font-size: 20px;
+  }
+  
+  .mostSelliing-seeMore-btn {
+    font-size: 16px;
+  }
+}
+
+/* Small Phones (480px - 575px) */
+@media (max-width: 575px) {
+  .MostSelling {
+    padding-top: 10px;
+    padding-bottom: 25px;
+  }
+  
+  .mostSelling-heading {
+    height: 10vh;
+    flex-direction: column; /* Stack title and button vertically */
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .mostSelling-title {
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .mostSelliing-seeMore-btn {
+    font-size: 14px;
+  }
+}
+
+/* Extra Small Phones (below 480px) */
+@media (max-width: 479px) {
+  .MostSelling {
+    padding-top: 8px;
+    padding-bottom: 20px;
+  }
+  
+  .mostSelling-heading {
+    height: auto; /* Let content determine height */
+    padding: 15px 0;
+  }
+  
+  .mostSelling-title {
+    font-size: 16px;
+  }
+  
+  .mostSelliing-seeMore-btn {
+    font-size: 13px;
+  }
+  
+  .mostSelliing-seeMore:hover {
+    transform: none; /* Remove hover effect on very small screens */
+  }
 }

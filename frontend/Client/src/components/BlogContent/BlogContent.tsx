@@ -36,7 +36,7 @@ const BlogContent = () => {
               <div className="blogContent-img">
                 <Image src={blog.img} fluid />
                 <div className="blogContent-img-hover">
-                  <MdOutlineOpenInNew fontSize="42px" color="yellow" />
+                  <MdOutlineOpenInNew fontSize="42px" color="purple" />
                 </div>
               </div>
 

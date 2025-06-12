@@ -61,13 +61,13 @@
 .subscribe-input {
   border-radius: 42px;
   background-color: #FFFFFF;
-  color: black;
+  color: var(--primary-color);
   font-weight: 400;
-  font-size: 24px;
+  font-size: 18px;
   width: 600px;
   height: 80px;
   padding-left: 30px;
-  border: solid 2px yellow;
+  border: solid 2px var(--dark-plum);
   outline: none;
   z-index: 1;
 }
@@ -83,9 +83,17 @@
   font-size: 24px;
   font-weight: 400;
   cursor: pointer;
-  background-color: yellow;
-  color: black;
+  /* background-color: yellow; */
+  background-color: var(--background-color4);
+  color: var(--white);
   border-radius: 42px;
+  border: 1px solid var(--dark-plum);
+}
+
+.subscribe-button:hover{
+  background-color: var(--background-color);
+  border: 1px solid var(--dark-plum);
+  color: var(--dark-plum);
 }
 
 /* 📱 Responsive styles */

@@ -4,9 +4,9 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import { FaArrowLeftLong, FaArrowRight } from 'react-icons/fa6';
 import './HomeBg.css';
 
-import slideBgImg1 from '../../assets/images/sliderBanner11.jpg';
-import slideBgImg2 from '../../assets/images/sliderBanner12.jpg';
-import slideBgImg3 from '../../assets/images/sliderBanner13.jpg';
+import slideBgImg1 from '../../assets/images/LOGO.svg';
+import slideBgImg2 from '../../assets/images/bgImg1.jpg';
+import slideBgImg3 from '../../assets/images/shopBanner11.jpg';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -72,7 +72,7 @@ const HomeBg: React.FC = () => {
                 className="slide-image"
               />
               <div className="slide-text">
-                <h1>{slide.heading}</h1>
+                <div>{slide.heading}</div>
               </div>
             </div>
           </SwiperSlide>

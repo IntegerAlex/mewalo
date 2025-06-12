@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
 
 // import subscribeBg from '../../assets/images/subscribeBg.png'
 import './SubscribeComp.css'
@@ -22,7 +21,7 @@ const SubscribeComp = () => {
                 </div>
                 <div className="subscribe-input-div">
                     <input className='subscribe-input' type="text" placeholder='Enter Email Address' />
-                    <Button className='subscribe-button'>Subscribe</Button>
+                    <button className='subscribe-button'>Subscribe</button>
                 </div>
             </div>
         </div>

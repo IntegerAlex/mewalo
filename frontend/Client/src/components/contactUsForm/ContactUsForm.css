@@ -118,8 +118,9 @@ textarea.form-control {
 }
 
 .ContactForm-btn {
-  background-color: #fcdd2c;
-  color: white;
+  /* background-color: #fcdd2c; */
+  background-color: var(--background-color);
+  color: var(--dark-plum);
   border: none;
   padding: 12px 24px;
   border-radius: 6px;
@@ -132,7 +133,9 @@ textarea.form-control {
 }
 
 .ContactForm-btn:hover {
-  background-color: #fad505;
+  /* background-color: #fad505; */
+  background-color: var(--background-color4);
+  color: var(--white);
 }
 
 /* Image Styles */

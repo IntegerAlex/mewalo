@@ -1,5 +1,14 @@
 import { Button } from './ui/button';
 
+
+interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
+
 interface CartSummaryProps {
   cart: CartItem[];
   clearCart: () => void;

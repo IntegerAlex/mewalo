@@ -17,6 +17,7 @@ import { SiPaytm } from "react-icons/si";
 import { IoBagRemoveSharp } from "react-icons/io5";
 import { BsGift } from "react-icons/bs";
 import { IoMdHelpCircleOutline } from "react-icons/io";
+import logo from '../../assets/images/logo11-removebg-preview.png'
 import "./Footer.css";
 
 const Footer = () => {
@@ -26,7 +27,7 @@ const Footer = () => {
         <Row className="footer-row">
           {/* 1. Logo and company info */}
           <Col md={3} sm={12} className="footer-box animate-footer">
-            <img src="/logo.png" alt="Logo" className="footer-logo" />
+            <img src={logo} alt="Logo" className="footer-logo" />
             <ul className="footer-info">
               <li>We provide quality products</li>
               <li>Serving since 2020</li>
@@ -45,9 +46,9 @@ const Footer = () => {
             <h5 className="footer-heading">Active Links</h5>
             <ul className="footer-links">
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
+              <li><Link to="/about-us">About</Link></li>
               <li><Link to="/shop">Shop</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/contact-us">Contact</Link></li>
             </ul>
           </Col>
 

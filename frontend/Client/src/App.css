@@ -1,19 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
   /* font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal; */
 
-  *{
-     font-family: "Montserrat", sans-serif !important;
-  } 
+/* ============================================ */ */
+:root {
+    
+  /* --primary-color: #FFE34D; */
+  --primary-color: #9D1D4E;
+  --secondary-color: #E5751F;
+  --gold-accent: #D18E2F;
+  --dark-plum: #64253F;
+  --light-bg: #F9F4EF;
+  --text-color: #5A3E2B;
+  --accent-red: #C7383F;
+  --background-color : #F9F4EF;
+  --background-color2 : #FEFCFB;
 
-  :root {
-  --primary-color: #FFE34D;
+  /* --  */
   --white: #ffffff;
   --black: #000000;
   --gray: #f5f5f5;
   --dark-gray: #333333;
-  --yellow : #ffd700;
-  --light-green : #90EE90;
+  --yellow: #ffd700;
+  --light-green: #90EE90;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif !important;
 }

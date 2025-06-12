@@ -1,72 +1,69 @@
+
+
+
+
+/* Base Styles (Mobile First) */
 .counter-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  margin-top: 10px;
+}
+
+.rectangle-box {
+  display: flex;
+  align-items: center;
+  background-color: var(--background-color4);
+  border-radius: 20px;
+  padding: 6px 12px;
+  gap: 12px;
+  transition: all 0.3s ease-in-out;
 }
 
 .circle-button {
-  width: 60px;
-  height: 60px;
-  /* background-color: #014034; */
-  background-color: #ffd700 !important;
+  width: 40px;
+  height: 40px;
+  background-color: var(--background-color4);
   color: white;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  font-size: 24px;
-  transition: all 0.3s ease-in-out;
-}
-
-.rectangle-box {
-  display: flex;
-  align-items: center;
-  /* background-color: #014034; */
-  background-color: #ffd700 !important;
-  border-radius: 30px;
-  padding: 10px 20px;
-  gap: 20px;
+  font-size: 16px;
   transition: all 0.3s ease-in-out;
 }
 
 .icon-button {
-  background-color: white;
+  background-color: var(--white);
   border: none;
-  padding: 8px;
+  padding: 6px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 14px;
-  /* color: #014034; */
-  color: #ffd700;
+  font-size: 12px;
+  color: var(--dark-plum);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .counter-value {
-  color: white;
-  font-size: 24px;
-  width: 30px;
+  color: var(--white);
+  font-size: 16px;
+  width: 25px;
+  font-weight: 400;
   text-align: center;
   position: relative;
   animation-duration: 0.3s;
   animation-fill-mode: forwards;
 }
 
-.counter-value.up {
-  animation-name: slideUp;
+.productCard-total {
+  color: var(--dark-plum);
+  font-size: 14px;
 }
 
-.counter-value.down {
-  animation-name: slideDown;
-}
-
-.productCard-total{
-  color: #ffd700;
-}
-
+/* Animation Keyframes */
 @keyframes slideUp {
   0% {
     transform: translateY(10px);
@@ -86,5 +83,84 @@
   100% {
     transform: translateY(0px);
     opacity: 1;
+  }
+}
+
+/* ============ RESPONSIVE ADJUSTMENTS ============ */
+
+/* Small Tablets (600px and up) */
+@media (min-width: 600px) {
+  .rectangle-box {
+    padding: 8px 16px;
+    gap: 15px;
+  }
+
+  .circle-button {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .icon-button {
+    padding: 7px;
+    font-size: 13px;
+  }
+
+  .counter-value {
+    font-size: 18px;
+  }
+
+  .productCard-total {
+    font-size: 15px;
+  }
+}
+
+/* Large Tablets (768px and up) */
+@media (min-width: 768px) {
+  .rectangle-box {
+    padding: 10px 20px;
+    gap: 20px;
+    border-radius: 30px;
+  }
+
+  .circle-button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .icon-button {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .counter-value {
+    font-size: 20px;
+  }
+}
+
+/* Standard Desktops (992px and up) */
+@media (min-width: 992px) {
+  .circle-button {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+  }
+
+  .counter-value {
+    font-size: 22px;
+  }
+}
+
+/* Large Desktops (1200px and up) */
+@media (min-width: 1200px) {
+  .circle-button {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .counter-value {
+    font-size: 24px;
   }
 }

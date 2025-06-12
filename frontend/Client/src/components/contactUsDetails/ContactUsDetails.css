@@ -1,48 +1,206 @@
-
-#ContactUsDetails{
-    height: 50vh;
+/* Base styles for all screens */
+#ContactUsDetails {
+    height: 50vh; /* Flexible height based on viewport */
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-    background-color: rgb(240, 238, 238);
-    margin-top: 20px;
+    background-color: var(--background-color);
+    margin-top: 2rem; /* Relative unit for margin */
+    padding: 1rem; /* Add padding for smaller screens */
+    box-sizing: border-box;
 }
 
-.contactUs-address, .contactUs-phone, .contactUs-mail{
-    height: 35vh;
-    width: 20%;
-    border-radius: 18px;
-    background-color: #FFFFFF;
+.contactUs-address, .contactUs-phone, .contactUs-mail {
+    height: 35vh; /* Base height */
+    width: 20%; /* Base width for larger screens */
+    min-width: 200px; /* Minimum width to prevent squeezing */
+    border-radius: 1rem;
+    background-color: var(--white);
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 5px;
+    gap: 0.5rem;
     flex-direction: column;
     border: 1px solid;
-    padding-top: 60px;
-    
+    padding-top: 3rem;
+    box-sizing: border-box;
 }
 
-
-.contactUs-address-icon, .contactUs-phone-icon, .contactUs-mail-icon{
-    height: 7vh;
-    width: 55px;
-    border-radius: 8px;
-    background-color: #FFE34D;
+.contactUs-address-icon, .contactUs-phone-icon, .contactUs-mail-icon {
+    height: 7vh; /* Flexible height */
+    width: 3.5rem; /* Base width */
+    border-radius: 0.5rem;
+    background-color: var(--background-color4);
     color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
+    font-size: 1.5rem; /* Base icon size */
 }
 
-.contactusAdress-title, .contactusPhone-title, .contactusMail-title{
-    font-size: 18px;
+.contactusAdress-title, .contactusPhone-title, .contactusMail-title {
+    font-size: 1.125rem; /* 18px base */
     font-weight: 600;
+    color: var(--dark-plum);
 }
 
-.contactusAddress-address{
+.contactusAddress-address {
     max-width: 90%;
+    font-size: 0.875rem; /* 14px base */
+}
+
+/* Extra Large Screens (1920px and above) */
+@media screen and (min-width: 1920px) {
+    #ContactUsDetails {
+        height: 60vh;
+        padding: 2rem;
+    }
+
+    .contactUs-address, .contactUs-phone, .contactUs-mail {
+        height: 40vh;
+        width: 22%;
+        border-radius: 1.2rem;
+        padding-top: 4rem;
+    }
+
+    .contactUs-address-icon, .contactUs-phone-icon, .contactUs-mail-icon {
+        height: 8vh;
+        width: 4rem;
+        font-size: 2rem;
+    }
+
+    .contactusAdress-title, .contactusPhone-title, .contactusMail-title {
+        font-size: 1.5rem; /* 24px */
+    }
+
+    .contactusAddress-address {
+        font-size: 1.125rem; /* 18px */
+    }
+}
+
+/* Large Screens (1200px - 1919px) */
+@media screen and (max-width: 1919px) and (min-width: 1200px) {
+    #ContactUsDetails {
+        height: 55vh;
+    }
+
+    .contactUs-address, .contactUs-phone, .contactUs-mail {
+        height: 38vh;
+        width: 25%;
+        padding-top: 3.5rem;
+    }
+
+    .contactUs-address-icon, .contactUs-phone-icon, .contactUs-mail-icon {
+        height: 7.5vh;
+        width: 3.75rem;
+        font-size: 1.75rem;
+    }
+
+    .contactusAdress-title, .contactusPhone-title, .contactusMail-title {
+        font-size: 1.25rem; /* 20px */
+    }
+
+    .contactusAddress-address {
+        font-size: 1rem; /* 16px */
+    }
+}
+
+/* Desktop (992px - 1199px) */
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+    #ContactUsDetails {
+        height: auto; /* Allow height to adjust */
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .contactUs-address, .contactUs-phone, .contactUs-mail {
+        height: 30vh;
+        width: 30%;
+        min-width: 180px;
+        padding-top: 2.5rem;
+    }
+
+    .contactUs-address-icon, .contactUs-phone-icon, .contactUs-mail-icon {
+        height: 6vh;
+        width: 3rem;
+        font-size: 1.5rem;
+    }
+
+    .contactusAdress-title, .contactusPhone-title, .contactusMail-title {
+        font-size: 1.125rem; /* 18px */
+    }
+
+    .contactusAddress-address {
+        font-size: 0.875rem; /* 14px */
+    }
+}
+
+/* Tablet (768px - 991px) */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    #ContactUsDetails {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .contactUs-address, .contactUs-phone, .contactUs-mail {
+        height: 25vh;
+        width: 80%;
+        max-width: 400px;
+        padding-top: 2rem;
+        border-radius: 0.8rem;
+    }
+
+    .contactUs-address-icon, .contactUs-phone-icon, .contactUs-mail-icon {
+        height: 5vh;
+        width: 2.5rem;
+        font-size: 1.25rem;
+    }
+
+    .contactusAdress-title, .contactusPhone-title, .contactusMail-title {
+        font-size: 1rem; /* 16px */
+    }
+
+    .contactusAddress-address {
+        font-size: 0.875rem; /* 14px */
+    }
+}
+
+/* Mobile (below 768px) */
+@media screen and (max-width: 767px) {
+    #ContactUsDetails {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .contactUs-address, .contactUs-phone, .contactUs-mail {
+        height: 20vh;
+        width: 90%;
+        max-width: 320px;
+        padding-top: 1.5rem;
+        border-radius: 0.6rem;
+    }
+
+    .contactUs-address-icon, .contactUs-phone-icon, .contactUs-mail-icon {
+        height: 6vh;
+        width: 4rem;
+        font-size: 1rem;
+    }
+
+    .contactusAdress-title, .contactusPhone-title, .contactusMail-title {
+        font-size: 0.875rem; /* 14px */
+    }
+
+    .contactusAddress-address {
+        font-size: 0.75rem; /* 12px */
+    }
 }
