@@ -286,7 +286,7 @@ a {
   display: block;
   text-align: center;
   /* background: #4CAF50; */
-  background-color: var(--background-color);
+  background-color: var(--light-green);
   color: var(--dark-plum);
   padding: 8px;
   border-radius: 4px;
@@ -294,7 +294,7 @@ a {
 
 .view-cart-btn:hover {
   /* background: #45a049; */
-  background-color: var(--background-color4);
+  background-color: var(--dark-green);
   color: var(--white);
 }
 

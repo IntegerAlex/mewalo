@@ -60,7 +60,7 @@ const Header: React.FC = () => {
         <div className="header-middle-content">
           {/* Logo */}
           <div className="logo">
-            <Image src={logo} fluid style={{ height: '120px'}}  onClick={mewaloOnClick}/>
+            <Image src={logo} fluid style={{ height: '80px'}}  onClick={mewaloOnClick}/>
           </div>
 
         
