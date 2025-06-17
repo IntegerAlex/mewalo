@@ -2,7 +2,7 @@ from pymongo import MongoClient
 from dotenv import load_dotenv
 import os
 import logging
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 from uuid import uuid4
 from datetime import datetime
 
@@ -38,29 +38,112 @@ temp_reg_collection = db['temp_registrations'] if db is not None else None # Tem
 
 # --- Utility functions ---
 
-def get_products():
-    """Fetch all products from the database."""
+def get_products(query: Dict[str, Any] = {}, page: int = 1, limit: int = 10) -> Dict[str, Any]:
+    """Fetch products from the database with optional filtering and pagination."""
+    if product_collection is None:
+        logger.error("Database connection not available.")
+        return {"data": [], "pagination": {"page": 1, "limit": 0, "total": 0, "pages": 0, "has_next": False, "has_prev": False}}
+    try:
+        # Ensure price range is handled correctly
+        if "min_price" in query or "max_price" in query:
+            price_query = {}
+            if "min_price" in query:
+                price_query["$gte"] = query.pop("min_price")
+            if "max_price" in query:
+                price_query["$lte"] = query.pop("max_price")
+            query["price"] = price_query
+
+        # Build the aggregation pipeline
+        pipeline = []
+
+        # 1. Match based on query parameters
+        if query:
+            pipeline.append({"$match": query})
+
+        # 2. Count total documents before pagination
+        total_count_pipeline = list(pipeline)
+        total_count_pipeline.append({"$count": "total"})
+        total_result = list(product_collection.aggregate(total_count_pipeline))
+        total_products = total_result[0]["total"] if total_result else 0
+
+        # 3. Add pagination stages
+        skip = (page - 1) * limit
+        pipeline.append({"$skip": skip})
+        pipeline.append({"$limit": limit})
+
+        # 4. Project to exclude _id and ensure product_id exists
+        pipeline.append({"$project": {"_id": 0}})
+
+        products = list(product_collection.aggregate(pipeline))
+
+        total_pages = (total_products + limit - 1) // limit if limit > 0 else 0
+        has_next = page < total_pages
+        has_prev = page > 1
+
+        pagination = {
+            "page": page,
+            "limit": limit,
+            "total": total_products,
+            "pages": total_pages,
+            "has_next": has_next,
+            "has_prev": has_prev,
+        }
+
+        return {"data": products, "pagination": pagination}
+    except Exception as e:
+        logger.error(f"Error fetching products with filter/pagination: {e}")
+        return {"data": [], "pagination": {"page": page, "limit": limit, "total": 0, "pages": 0, "has_next": False, "has_prev": False}}
+
+def get_product_by_id(product_id: str) -> Optional[Dict[str, Any]]:
+    """Fetch a single product by its unique product_id."""
+    if product_collection is None:
+        logger.error("Database connection not available.")
+        return None
+    try:
+        # Ensure to query by 'product_id' field, not '_id'
+        return product_collection.find_one({"product_id": product_id}, {"_id": 0})
+    except Exception as e:
+        logger.error(f"Error fetching product by product_id {product_id}: {e}")
+        return None
+
+def get_products_by_category_and_subcategory(category: str, subcategory: str) -> List[Dict[str, Any]]:
+    """Fetch products by category and subcategory."""
     if product_collection is None:
         logger.error("Database connection not available.")
         return []
     try:
-        # Exclude _id explicitly if not needed in frontend
-        return list(product_collection.find({}, {'_id': 0}))
+        # Ensure to query by 'category' and 'subcategory' fields
+        return list(product_collection.find({"category": category, "subcategory": subcategory}, {"_id": 0}))
     except Exception as e:
-        logger.error(f"Error fetching products: {e}")
+        logger.error(f"Error fetching products by category {category} and subcategory {subcategory}: {e}")
         return []
 
-def get_product_by_id(product_id: str):
-    """Fetch a single product by ID."""
+def get_categories_with_product_counts() -> List[Dict[str, Any]]:
+    """Fetch all unique categories with their respective product counts."""
     if product_collection is None:
         logger.error("Database connection not available.")
-        return None
+        return []
     try:
-        # Exclude _id explicitly if not needed in frontend
-        return product_collection.find_one({"product_id": product_id}, {'_id': 0})
+        # Aggregate to get unique categories and count products in each
+        pipeline = [
+            {"$group": {"_id": "$category", "product_count": {"$sum": 1}}},
+            {"$project": {"_id": 0, "id": "$_id", "name": "$_id", "product_count": 1}}
+        ]
+        return list(product_collection.aggregate(pipeline))
     except Exception as e:
-        logging.error(f"Error fetching product {product_id}: {e}")
-        return None
+        logger.error(f"Error fetching categories with product counts: {e}")
+        return []
+
+def get_products_by_category(category_name: str) -> List[Dict[str, Any]]:
+    """Fetch all products belonging to a specific category."""
+    if product_collection is None:
+        logger.error("Database connection not available.")
+        return []
+    try:
+        return list(product_collection.find({"category": category_name}, {"_id": 0}))
+    except Exception as e:
+        logger.error(f"Error fetching products for category {category_name}: {e}")
+        return []
 
 # --- User and Registration functions (New) ---
 

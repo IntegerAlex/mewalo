@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-
+from flask_cors import CORS
 
 from utils.error_handlers import register_error_handlers
 
@@ -7,6 +7,7 @@ from utils.error_handlers import register_error_handlers
 from routes.auth import auth_bp
 from routes.product import product_bp
 from routes.categories import category_bp
+from routes.admin import admin_bp
 
 def create_app():
     """Application factory pattern for Flask app creation"""
@@ -14,6 +15,7 @@ def create_app():
     
     # Create Flask app
     app = Flask(__name__)
+    CORS(app)
     
     
     
@@ -24,6 +26,7 @@ def create_app():
     app.register_blueprint(auth_bp, url_prefix='/api/v1/auth')
     app.register_blueprint(product_bp, url_prefix='/api/v1/product')
     app.register_blueprint(category_bp, url_prefix='/api/v1/categories')
+    app.register_blueprint(admin_bp, url_prefix='/api/v1/admin')
     
     # Health check endpoint
     @app.route('/health', methods=['GET'])
