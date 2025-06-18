@@ -1,7 +1,7 @@
 
 
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import {
   FiMenu,
   FiSearch,
@@ -17,11 +17,22 @@ import { useCart } from '../../contexts/CartContext';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
   const [isCartHovered, setIsCartHovered] = useState(false);
   const { cart } = useCart();
   
+  // Set active link based on current path when component mounts or location changes
+  useEffect(() => {
+    const path = location.pathname;
+    if (path === '/') setActiveLink('Home');
+    else if (path === '/about-us') setActiveLink('About Us');
+    else if (path === '/shop') setActiveLink('Shop');
+    else if (path === '/blog') setActiveLink('Blog');
+    else if (path === '/contact-us') setActiveLink('Contact Us');
+  }, [location.pathname]);
+
   // Calculate the number of unique products in the cart
   const uniqueProductCount = cart.length;
 
@@ -32,10 +43,18 @@ const Header: React.FC = () => {
   const handleLinkClick = (link: string) => {
     setActiveLink(link);
     setIsMenuOpen(false);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   const mewaloOnClick = () => {
     navigate('/');
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   return (
@@ -49,7 +68,17 @@ const Header: React.FC = () => {
           <div className="promo-text">
             <span>
               Sign up and GET 25% OFF for your first order.{' '}
-              <Link to="/signup">Sign up now</Link>
+              <Link 
+                to="/signup" 
+                onClick={() => {
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  });
+                }}
+              >
+                Sign up now
+              </Link>
             </span>
           </div>
         </div>
@@ -60,44 +89,93 @@ const Header: React.FC = () => {
         <div className="header-middle-content">
           {/* Logo */}
           <div className="logo">
-            <Image src={logo} fluid style={{ height: '80px'}}  onClick={mewaloOnClick}/>
+            <Image src={logo} fluid style={{ height: '80px' }} onClick={mewaloOnClick} />
           </div>
-
-        
 
           {/* Nav Links */}
           <nav className={`nav-links-middle ${isMenuOpen ? 'open' : ''}`}>
-            <Link to="/" className={activeLink === 'Home' ? 'active' : ''} onClick={() => handleLinkClick('Home')}>
+            <Link 
+              to="/" 
+              className={activeLink === 'Home' ? 'active' : ''} 
+              onClick={() => handleLinkClick('Home')}
+            >
               Home
             </Link>
-            <Link to="/about-us" className={activeLink === 'About Us' ? 'active' : ''} onClick={() => handleLinkClick('About Us')}>
+            <Link 
+              to="/about-us" 
+              className={activeLink === 'About Us' ? 'active' : ''} 
+              onClick={() => handleLinkClick('About Us')}
+            >
               About Us
             </Link>
-            <Link to="/shop" className={activeLink === 'Shop' ? 'active' : ''} onClick={() => handleLinkClick('Shop')}>
+            <Link 
+              to="/shop" 
+              className={activeLink === 'Shop' ? 'active' : ''} 
+              onClick={() => handleLinkClick('Shop')}
+            >
               Shop
             </Link>
-            <Link to="/blog" className={activeLink === 'Blog' ? 'active' : ''} onClick={() => handleLinkClick('Blog')}>
+            <Link 
+              to="/blog" 
+              className={activeLink === 'Blog' ? 'active' : ''} 
+              onClick={() => handleLinkClick('Blog')}
+            >
               Blog
             </Link>
-            <Link to="/contact-us" className={activeLink === 'Contact Us' ? 'active' : ''} onClick={() => handleLinkClick('Contact Us')}>
+            <Link 
+              to="/contact-us" 
+              className={activeLink === 'Contact Us' ? 'active' : ''} 
+              onClick={() => handleLinkClick('Contact Us')}
+            >
               Contact Us
             </Link>
           </nav>
 
           {/* Icons */}
           <div className="header-icons">
-            <Link to="/login" className="login-btn">
+            <Link 
+              to="/login" 
+              className="login-btn"
+              onClick={() => {
+                window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth'
+                });
+              }}
+            >
               LOG IN
             </Link>
-            <Link to="/wishlist" className="icon-button"><FiHeart size={24} /></Link>
+            <Link 
+              to="/wishlist" 
+              className="icon-button"
+              onClick={() => {
+                window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth'
+                });
+              }}
+            >
+              <FiHeart size={24} />
+            </Link>
 
-
-            <div className="cart-icon-container" onMouseEnter={() => setIsCartHovered(true)} onMouseLeave={() => setIsCartHovered(false)}>
-              <Link to="/cart" className="icon-button">
+            <div 
+              className="cart-icon-container" 
+              onMouseEnter={() => setIsCartHovered(true)} 
+              onMouseLeave={() => setIsCartHovered(false)}
+            >
+              <Link 
+                to="/cart" 
+                className="icon-button"
+                onClick={() => {
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  });
+                }}
+              >
                 <FiShoppingCart size={24} />
                 {uniqueProductCount > 0 && <span className="cart-count">{uniqueProductCount}</span>}
               </Link>
-
 
               {isCartHovered && cart.length > 0 && (
                 <div className="cart-dropdown">
@@ -131,16 +209,27 @@ const Header: React.FC = () => {
                     </span>
                   </div>
                   <div className="cart-dropdown-footer">
-                    <Link to="/cart" className="view-cart-btn">View Cart</Link>
+                    <Link 
+                      to="/cart" 
+                      className="view-cart-btn"
+                      onClick={() => {
+                        window.scrollTo({
+                          top: 0,
+                          behavior: 'smooth'
+                        });
+                      }}
+                    >
+                      View Cart
+                    </Link>
                   </div>
                 </div>
               )}
             </div>
 
-              {/* Menu Toggle for Mobile */}
-          <button className="menu-toggle" onClick={toggleMenu}>
-            <FiMenu size={24} />
-          </button>
+            {/* Menu Toggle for Mobile */}
+            <button className="menu-toggle" onClick={toggleMenu}>
+              <FiMenu size={24} />
+            </button>
           </div>
         </div>
       </div>

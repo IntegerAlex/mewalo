@@ -1,9 +1,9 @@
 import nuts from '../assets/images/nuts.jpg'
 
 export interface nut {
-  id: string;
+  product_id: string;
   name: string;
-  img: string;
+  image: string;
   price: string;
   nDiscount: string;
   nIsStock: boolean;
@@ -11,49 +11,49 @@ export interface nut {
 
 export const nutsData: nut[] = [
   {
-    id: "nut1",
+    product_id: "nut1",
     name: "Brazil",
-    img: nuts,
+    image: nuts,
     price: "950",
     nDiscount: "10%",
     nIsStock: true,
   },
   {
-    id: "nut2",
+    product_id: "nut2",
     name: "Hazel",
-    img: nuts,
+    image: nuts,
     price: "880",
     nDiscount: "12%",
     nIsStock: true,
   },
   {
-    id: "nut3",
+    product_id: "nut3",
     name: "Macadamia",
-    img: nuts,
+    image: nuts,
     price: "1350",
     nDiscount: "15%",
     nIsStock: false,
   },
   {
-    id: "nut4",
+    product_id: "nut4",
     name: "Pecans",
-    img: nuts,
+    image: nuts,
     price: "1100",
     nDiscount: "8%",
     nIsStock: true,
   },
   {
-    id: "nut5",
+    product_id: "nut5",
     name: "Pine",
-    img: nuts,
+    image: nuts,
     price: "1400",
     nDiscount: "10%",
     nIsStock: true,
   },
   {
-    id: "nut6",
+    product_id: "nut6",
     name: "Walnuts",
-    img: nuts,
+    image: nuts,
     price: "1000",
     nDiscount: "20%",
     nIsStock: true,

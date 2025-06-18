@@ -10,8 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 interface WishlistItem {
   id: string;
   name: string;
-  img: string;
-  type: string;
+  image: string;
+  subcategory: string;
   price: string;
   basePrice: number;
 }
@@ -39,8 +39,8 @@ const WishlistPage = () => {
     const newItem = {
       id: product.id,
       name: product.name,
-      img: product.img,
-      type: product.type,
+      img: product.image,
+      type: product.subcategory,
       quantity: 1,
       selectedQuantity: 0.2, // Default quantity
       price: product.basePrice,
@@ -87,7 +87,7 @@ const WishlistPage = () => {
           {wishlist.map((product) => (
             <div key={product.id} className="wishlist-item">
               <div className="wishlist-item-img">
-                <img src={product.img} alt={product.name} />
+                <img src={product.image} alt={product.name} />
                 <button 
                   className="wishlist-remove-btn"
                   onClick={() => removeFromWishlist(product.id)}
@@ -97,7 +97,7 @@ const WishlistPage = () => {
               </div>
               <div className="wishlist-item-details">
                 <h3>{product.name}</h3>
-                <p className="item-type">{product.type}</p>
+                <p className="item-type">{product.subcategory}</p>
                 <p className="item-price">₹{(product.basePrice * 0.2).toFixed(2)} (200gm)</p>
               </div>
               <div className="wishlist-item-actions">

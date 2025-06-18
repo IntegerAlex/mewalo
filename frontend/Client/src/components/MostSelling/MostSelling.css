@@ -1,11 +1,46 @@
 /* MostSelling Section - Base Styles (Desktop First) */
 .MostSelling {
-  padding-top: 30px;
+  padding-top: 5px;
   width: 100%;
   height: auto;
   padding-bottom: 30px;
 }
 
+
+.mostSelling{
+  padding-left: 0px;
+}
+
+/* MostSelling Section - Base Styles 
+/* Swiper container adjustments */
+.mySwiper {
+  padding: 0 10px;
+}
+
+/* Responsive adjustments */
+@media (min-width: 576px) {
+  .mySwiper {
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .mySwiper {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mySwiper {
+    padding: 0;
+  }
+}
+
+/* Card styling adjustments */
+.swiper-slide {
+  padding: 0 5px; /* Internal spacing between cards */
+  box-sizing: border-box;
+}
 /* Heading Container */
 .mostSelling-heading {
   height: 20vh;
@@ -147,7 +182,9 @@
 
 /* Extra Small Phones (below 480px) */
 @media (max-width: 479px) {
+
   .MostSelling {
+    width: 100% !important;
     padding-top: 8px;
     padding-bottom: 20px;
   }

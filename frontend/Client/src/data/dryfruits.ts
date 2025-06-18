@@ -1,9 +1,9 @@
-import img from '../assets/images/almond.png'
+import image1 from '../assets/images/almond.png'
 
 export interface dryfruit {
-  id: string;
+  product_id: string;
   name: string;
-  img: string;
+  image: string;
   price: string;
   dPrice: string;
   dDiscount: string;
@@ -12,81 +12,81 @@ export interface dryfruit {
 
 export const dryfruitsData: dryfruit[] = [
   {
-    id: "dryfruit1",
+    product_id: "dryfruit1",
     name: "Almond",
-    img: img,
+    image: image1,
     price: "Carmel",
     dPrice: "700",
     dDiscount: "10%",
     dIsStock: true,
   },
   {
-    id: "dryfruit2",
+    product_id: "dryfruit2",
     name: "Cashew",
-    img: img,
+    image: image1,
     price: "W320",
     dPrice: "850",
     dDiscount: "15%",
     dIsStock: true,
   },
   {
-    id: "dryfruit3",
+    product_id: "dryfruit3",
     name: "Anjir",
-    img:img,
+    image:image1,
     price: "Dried",
     dPrice: "950",
     dDiscount: "5%",
     dIsStock: false,
   },
   {
-    id: "dryfruit4",
+    product_id: "dryfruit4",
     name: "Kishmish",
-    img: img,
+    image: image1,
     price: "Golden",
     dPrice: "400",
     dDiscount: "12%",
     dIsStock: true,
   },
   {
-    id: "dryfruit5",
+    product_id: "dryfruit5",
     name: "Walnuts",
-    img: img,
+    image: image1,
     price: "Akhrot Giri",
     dPrice: "1000",
     dDiscount: "20%",
     dIsStock: true,
   },
   {
-    id: "dryfruit6",
+    product_id: "dryfruit6",
     name: "Pistachios",
-    img: img,
+    image: image1,
     price: "Roasted",
     dPrice: "1200",
     dDiscount: "18%",
     dIsStock: false,
   },
   {
-    id: "dryfruit7",
+    product_id: "dryfruit7",
     name: "Elaichi",
-    img: img,
+    image: image1,
     price: "Green",
     dPrice: "1600",
     dDiscount: "7%",
     dIsStock: true,
   },
   {
-    id: "dryfruit8",
+    product_id: "dryfruit8",
     name: "Dried Fruits",
-    img:img,
+    image:image1,
     price: "Mixed Pack",
     dPrice: "950",
     dDiscount: "10%",
     dIsStock: true,
   },
   {
-    id: "dryfruit9",
+    product_id: "dryfruit9",
     name: "Mix Dryfruits",
-    img: img,
+    image: image1,
     price: "Premium Mix",
     dPrice: "1300",
     dDiscount: "15%",

@@ -22,13 +22,13 @@ const CounterButton = ({ count, onIncrement, onDecrement }: CounterButtonProps) 
       ) : (
         <div className="rectangle-box">
           <button className="icon-button" onClick={onDecrement}>
-            <FaMinus />
+            <FaMinus className="minus-icon"/>
           </button>
 
           <div className={`counter-value ${animateDirection}`}>{count}</div>
 
           <button className="icon-button" onClick={onIncrement}>
-            <FaPlus />
+            <FaPlus className="plus-icon" />
           </button>
         </div>
       )}

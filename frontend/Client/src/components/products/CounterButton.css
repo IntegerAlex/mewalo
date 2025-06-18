@@ -164,3 +164,35 @@
     font-size: 24px;
   }
 }
+
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .counter-wrapper {
+  margin-top: 4px;
+  }
+
+  .rectangle-box{
+    padding: 2px 6px;
+  gap: 6px;
+  }
+
+  .circle-button {
+  width: 40px;
+  height: 40px;
+    font-size: 12px;
+}
+
+.icon-button {
+  padding: 3px;
+  font-size: 10px;
+}
+.minus-icon {
+    width: 8px !important;
+    height: 8px !important;
+  }
+
+  .plus-icon{
+    width: 8px !important;
+    height: 8px !important;
+  }
+}

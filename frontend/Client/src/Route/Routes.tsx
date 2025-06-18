@@ -12,6 +12,7 @@ import LoginRegister from "@/components/LoginRegister/LoginRegister";
 import ProductDetailPage from "@/components/products/ProductDetailPage";
 import OtpInput from "@/components/OtpInput/OtpInput";
 import WishlistPage from "@/components/whishlist/WishlistPage";
+// import SignupSignin from "@/components/SIgnUp&SingIn/SignupSignin";
 
 
 const routes: RouteObject[] = [

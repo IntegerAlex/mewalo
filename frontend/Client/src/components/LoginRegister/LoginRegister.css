@@ -3,12 +3,15 @@
 
 
 /* Base styles (unchanged) */
+
+#LoginRegisterForms{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 #LoginRegister {
-    height: 100vh;
+    height: 80vh;
     position: relative;
     overflow: hidden;
-    padding-top: 20px;
-    padding-bottom: 20px;
     background: #f5f5f5;
 }
 
@@ -103,7 +106,7 @@
 }
 
 .register-address {
-    min-height: 120px;
+    min-height: 80px;
     resize: vertical;
 }
 

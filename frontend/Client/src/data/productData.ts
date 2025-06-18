@@ -1,78 +1,78 @@
 import productImg1 from "../assets/images/almond.png"
 
-// Type definition (optional but good for TypeScript)
+// subcategory definition (optional but good for TypeScript)
 export interface Product {
-  id:string;
-  img: string;
+  product_id:string;
+  image: string;
   name: string;
-  type: string;
+  subcategory: string;
   weight: string;
   price: string;
 }
 
 export const products: Product[] = [
   {
-    id:'prod-1',
-    img: productImg1,
+    product_id:'prod-1',
+    image: productImg1,
     name: "Carmel Almonds",
-    type: "(Almond)",
+    subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "17.29$"
+    price: "300"
   },
   {
-    id:'prod-2',
-    img: productImg1,
+    product_id:'prod-2',
+    image: productImg1,
     name: "Nonpareil Almonds",
-    type: "(Almond)",
+    subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "18.99$"
+    price: "900"
   },
   {
-    id:'prod-3',
-    img: productImg1,
+    product_id:'prod-3',
+    image: productImg1,
     name: "California Almonds",
-    type: "(Almond)",
+    subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "19.49$"
+    price: "700"
   },
   {
-    id:'prod-4',
-    img: productImg1,
+    product_id:'prod-4',
+    image: productImg1,
     name: "Mamra Almonds",
-    type: "(Almond)",
+    subcategory: "(Almond)",
     weight: "250 gm.",
-    price: "22.79$"
+    price: "1200"
   },
   {
-    id:'prod-5',
-    img: productImg1,
+    product_id:'prod-5',
+    image: productImg1,
     name: "Gurbandi Almonds",
-    type: "(Almond)",
+    subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "20.99$"
+    price: "1500"
   },
   {
-    id:'prod-6',
-    img: productImg1,
+    product_id:'prod-6',
+    image: productImg1,
     name: "Sweet Almonds",
-    type: "(Almond)",
+    subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "15.49$"
+    price: "1500"
   },
   {
-    id:'prod-7',
-    img: productImg1,
+    product_id:'prod-7',
+    image: productImg1,
     name: "Peerless Almonds",
-    type: "(Almond)",
+    subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "16.99$"
+    price: "1500"
   },
   {
-    id:'prod-8',
-    img: productImg1,
+    product_id:'prod-8',
+    image: productImg1,
     name: "Italian Avocado",
-    type: "(Local shop)",
+    subcategory: "(Local shop)",
     weight: "500 gm.",
-    price: "12.29$"
+    price: "1400"
   }
 ];

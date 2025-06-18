@@ -71,12 +71,14 @@ const LoginRegister = () => {
 
   return (
     <>
-        <div className="container-fluid" id='LoginRegister'>
+    <div className="container-fluid" id='LoginRegisterForms'>
+            <div className="container-fluid" id='LoginRegister'>
             <div className={`container LoginRegister ${activePanel}-active`}>
                 {/* REGISTER  */}
                 <div className="register-part">
                    <h2 className="register-title">Create Account</h2>
             <form onSubmit={registerFormik.handleSubmit}>
+              {/* username and useremail  */}
               <div className="register-row1">
                 <div className={`form-group ${registerFormik.touched.username && registerFormik.errors.username ? 'error' : ''}`}>
                   <input
@@ -107,7 +109,7 @@ const LoginRegister = () => {
                   )}
                 </div>
               </div>
-              
+              {/* address  */}
               <div className="register-row2">
                 <div className={`form-group full-width ${registerFormik.touched.address && registerFormik.errors.address ? 'error' : ''}`}>
                   <textarea
@@ -124,7 +126,7 @@ const LoginRegister = () => {
                   )}
                 </div>
               </div>
-              
+              {/* pincode and mobile  */}
               <div className="register-row3">
                 <div className={`form-group ${registerFormik.touched.pincode && registerFormik.errors.pincode ? 'error' : ''}`}>
                   <input
@@ -155,8 +157,8 @@ const LoginRegister = () => {
                   )}
                 </div>
               </div>
-              
-              <div className="register-row4">
+              {/* password and cpassword  */}
+              {/* <div className="register-row4">
                 <div className={`form-group ${registerFormik.touched.password && registerFormik.errors.password ? 'error' : ''}`}>
                   <input
                     type="password"
@@ -185,7 +187,7 @@ const LoginRegister = () => {
                     <div className="error-message">{registerFormik.errors.cpassword}</div>
                   )}
                 </div>
-              </div>
+              </div> */}
               
               <div className="form-footer">
                 <button type="submit" className="submit-btn">Register</button>
@@ -223,7 +225,7 @@ const LoginRegister = () => {
                 </div>
               </div>
               
-              <div className="form-row">
+              {/* <div className="form-row">
                 <div className={`form-group full-width ${loginFormik.touched.password && loginFormik.errors.password ? 'error' : ''}`}>
                   <input
                     type="password"
@@ -238,7 +240,7 @@ const LoginRegister = () => {
                     <div className="error-message">{loginFormik.errors.password}</div>
                   )}
                 </div>
-              </div>
+              </div> */}
               
               <div className="form-footer">
                 <button type="submit" className="submit-btn">Sign In</button>
@@ -255,6 +257,8 @@ const LoginRegister = () => {
                 </div>
             </div>
         </div>
+
+    </div>
 
         <FreeShipping/>
         <SubscribeComp/>

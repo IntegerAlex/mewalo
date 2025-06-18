@@ -21,18 +21,23 @@ const quantityOptions = [
 ];
 
 interface Product {
-  id: string;
+  product_id: string;
   name: string;
-  img: string;
-  type: string;
-  price: string;
+  image: string;
+  subcategory: string;
+  price: string; // Already in rupees
+  // Other fields from your API
 }
 
 interface WishlistItem extends Product {
   basePrice: number;
 }
 
-const ProductCard = ({ data }: { data: any[] }) => {
+interface ProductCardProps {
+  data: Product[];
+}
+
+const ProductCard = ({ data }: ProductCardProps) => {
   return (
     <div className="productCards container">
       <ToastContainer 
@@ -46,15 +51,9 @@ const ProductCard = ({ data }: { data: any[] }) => {
         draggable
         pauseOnHover
         theme="colored"
-        // toastStyle={{
-        //   top: '50%',
-        //   left: '50%',
-        //   transform: 'translate(-50%, -50%)',
-        //   width: 'fit-content',
-        // }}
       />
-      {data.map((product, index) => (
-        <ProductItem key={index} product={product} />
+      {data.map((product) => (
+        <ProductItem key={product.product_id} product={product} />
       ))}
     </div>
   );
@@ -62,19 +61,19 @@ const ProductCard = ({ data }: { data: any[] }) => {
 
 const ProductItem = ({ product }: { product: Product }) => {
   const navigate = useNavigate();
-  const basePrice = parseFloat(product.price.replace('$', '')) * 83;
+  const basePrice = parseFloat(product.price); // Already in rupees
   const [selectedQuantity, setSelectedQuantity] = useState(0.2);
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const { cart, addToCart, removeFromCart, updateCartItem } = useCart();
   
-  const cartItem = cart.find(item => item.id === product.id);
+  const cartItem = cart.find(item => item.id === product.product_id);
   const count = cartItem ? cartItem.quantity : 0;
 
   useEffect(() => {
     const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
-    setIsWishlisted(wishlist.some((item: WishlistItem) => item.id === product.id));
-  }, [product.id]);
+    setIsWishlisted(wishlist.some((item: WishlistItem) => item.product_id === product.product_id));
+  }, [product.product_id]);
 
   const handleQuantityChange = (value: string) => {
     setSelectedQuantity(parseFloat(value));
@@ -83,13 +82,13 @@ const ProductItem = ({ product }: { product: Product }) => {
   const handleIncrement = () => {
     const newCount = count + 1;
     const newItem = {
-      id: product.id,
+      id: product.product_id, // Using product_id instead of id
       name: product.name,
-      img: product.img,
-      type: product.type,
+      img: product.image, // Changed from img to image
+      type: product.subcategory, // Using subcategory as type
       quantity: newCount,
       selectedQuantity: selectedQuantity,
-      price: basePrice,
+      price: basePrice, // Already in rupees
       totalPrice: basePrice * selectedQuantity * newCount,
     };
 
@@ -100,15 +99,15 @@ const ProductItem = ({ product }: { product: Product }) => {
         className: 'centered-toast'
       });
     } else {
-      updateCartItem(product.id, newCount);
+      updateCartItem(product.product_id, newCount);
     }
   };
 
   const handleDecrement = () => {
     if (count > 1) {
-      updateCartItem(product.id, count - 1);
+      updateCartItem(product.product_id, count - 1);
     } else {
-      removeFromCart(product.id);
+      removeFromCart(product.product_id);
       toast.error(`${product.name} removed from cart!`, {
         position: "top-center",
         className: 'centered-toast'
@@ -121,7 +120,7 @@ const ProductItem = ({ product }: { product: Product }) => {
     setTimeout(() => setIsAnimating(false), 500);
     
     const wishlist: WishlistItem[] = JSON.parse(localStorage.getItem('wishlist') || '[]');
-    const productIndex = wishlist.findIndex(item => item.id === product.id);
+    const productIndex = wishlist.findIndex(item => item.product_id === product.product_id);
     
     if (productIndex === -1) {
       const newWishlistItem = {
@@ -153,9 +152,9 @@ const ProductItem = ({ product }: { product: Product }) => {
     <div className="productCard-item">
       <div className="productCard-img">
         <img
-          src={product.img}
+          src={product.image}
           alt={product.name}
-          style={{ width: "100%", height: "200px", objectFit: "cover" }}
+          className="productCardImg"
         />
         <div className="cart-fav-icon-div">
           <button 
@@ -163,7 +162,7 @@ const ProductItem = ({ product }: { product: Product }) => {
             onClick={toggleWishlist}
           >
             <FiHeart 
-              size={24} 
+              className="product-heart-icon"
               color={isWishlisted ? 'red' : 'white'} 
               fill={isWishlisted ? 'red' : 'none'}
             />
@@ -173,7 +172,7 @@ const ProductItem = ({ product }: { product: Product }) => {
 
       <div className="productCard-content">
         <div className="productCard-title">{product.name}</div>
-        <div className="productCard-type">{product.type}</div>
+        <div className="productCard-type">{product.subcategory}</div>
 
         <div className="productCard-quantity">
           <Select 
@@ -182,7 +181,7 @@ const ProductItem = ({ product }: { product: Product }) => {
             disabled={count > 0}
           >
             <SelectTrigger className="w-1/2 mx-auto mt-auto mb-2 text-center border-2 rounded product-quantity">
-              <SelectValue placeholder="Select Quantity" />
+              <SelectValue placeholder="Select Quantity"/>
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>

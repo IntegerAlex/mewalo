@@ -1,7 +1,7 @@
-  import React, { useRef, useEffect } from 'react';
+  import React, { useRef, useEffect, useState } from 'react';
   import { Swiper, SwiperSlide } from 'swiper/react';
   import { Autoplay, Navigation } from 'swiper/modules';
-  import { FaArrowLeftLong, FaArrowRight } from 'react-icons/fa6';
+  // import { FaArrowLeftLong, FaArrowRight } from 'react-icons/fa6';
   import './HomeBg.css';
 
   import slideBgImg1 from '../../assets/images/LOGO.svg';
@@ -28,6 +28,7 @@
   ];
 
   const HomeBg: React.FC = () => {
+    const [categories, setCategory] = useState([]);
     const swiperRef = useRef<any>(null);
     const prevRef = useRef<HTMLDivElement>(null);
     const nextRef = useRef<HTMLDivElement>(null);
@@ -39,7 +40,20 @@
         swiperRef.current.swiper.navigation.init();
         swiperRef.current.swiper.navigation.update();
       }
+
+      fetch(apiPath)
+      .then((res)=>res.json())
+      .then((data)=>{
+        setCategory(data)
+      })
     }, []);
+
+    console.log(categories)
+
+    const apiPath = import.meta.env.VITE_API_URL+ '/categories'
+    console.log(apiPath);
+
+  
 
     return (
       <div className="home-slider-container">
