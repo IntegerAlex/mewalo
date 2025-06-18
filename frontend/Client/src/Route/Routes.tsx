@@ -12,6 +12,7 @@ import LoginRegister from "@/components/LoginRegister/LoginRegister";
 import ProductDetailPage from "@/components/products/ProductDetailPage";
 import OtpInput from "@/components/OtpInput/OtpInput";
 import WishlistPage from "@/components/whishlist/WishlistPage";
+
 // import SignupSignin from "@/components/SIgnUp&SingIn/SignupSignin";
 
 
@@ -30,8 +31,8 @@ const routes: RouteObject[] = [
       { path: 'detail', element : <ProductDetailPage/>},
       { path: 'otp', element : <OtpInput/>},
       { path: 'wishlist', element : <WishlistPage/>},
+
       
-    
     //   { path: '/cart', element: <Cart /> },
     //   { path: '/payment', element: <Payment /> },
     //   { path: '/singleproduct', element: <SingleProduct /> },

@@ -153,7 +153,7 @@ const ShopFilter = () => {
             </div>
 
             {/* Other Dropdown */}
-            <div className="filter-dropdown">
+            {/* <div className="filter-dropdown">
               <div 
                 className="dropdown-header" 
                 onClick={() => toggleDropdown('other')}
@@ -177,7 +177,7 @@ const ShopFilter = () => {
                   </label>
                 </div>
               )}
-            </div>
+            </div> */}
 
             {/* Clear Filters Button */}
             <button 

@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 interface WishlistItem {
-  id: string;
+  product_id: string;
   name: string;
   image: string;
   subcategory: string;
@@ -26,7 +26,7 @@ const WishlistPage = () => {
   }, []);
 
   const removeFromWishlist = (productId: string) => {
-    const updatedWishlist = wishlist.filter(item => item.id !== productId);
+    const updatedWishlist = wishlist.filter(item => item.product_id !== productId);
     setWishlist(updatedWishlist);
     localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
     toast.error('Removed from wishlist!', {
@@ -37,7 +37,7 @@ const WishlistPage = () => {
 
   const addToCartFromWishlist = (product: WishlistItem) => {
     const newItem = {
-      id: product.id,
+      id: product.product_id,
       name: product.name,
       img: product.image,
       type: product.subcategory,
@@ -85,12 +85,12 @@ const WishlistPage = () => {
       ) : (
         <div className="wishlist-items">
           {wishlist.map((product) => (
-            <div key={product.id} className="wishlist-item">
+            <div key={product.product_id} className="wishlist-item">
               <div className="wishlist-item-img">
                 <img src={product.image} alt={product.name} />
                 <button 
                   className="wishlist-remove-btn"
-                  onClick={() => removeFromWishlist(product.id)}
+                  onClick={() => removeFromWishlist(product.product_id)}
                 >
                   <FiHeart size={20} color="red" fill="red" />
                 </button>
