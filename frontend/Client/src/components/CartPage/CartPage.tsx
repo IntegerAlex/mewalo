@@ -6,7 +6,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const CartPage = () => {
-  const { cart, removeFromCart, updateCartItem, clearCart, cartCount } = useCart();
+  const { cart, removeFromCart, updateCartItem, clearCart } = useCart();
+  
+  // Calculate number of distinct products instead of total quantity
+  const distinctProductCount = cart.length;
 
   // Calculate subtotal using Math.floor for whole numbers
   const calculateSubtotal = () => {
@@ -73,15 +76,9 @@ const CartPage = () => {
         draggable
         pauseOnHover
         theme="colored"
-        // toastStyle={{
-        //   top: '50%',
-        //   left: '50%',
-        //   transform: 'translate(-50%, -50%)',
-        //   width: 'fit-content',
-        // }}
       />
       
-      <h1>Your Cart ({cartCount})</h1>
+      <h1>Your Cart ({distinctProductCount})</h1>
       
       {cart.length === 0 ? (
         <div className="empty-cart">

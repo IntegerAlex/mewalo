@@ -18,70 +18,70 @@ export const mostSellingData: Product[] = [
     name: "Carmel Almonds",
     subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "17.29$",
-    basePrice: 870
+    price: "₹590",
+    basePrice: 590
   },
   {
-    product_id: "most-prod-2", // Changed to unique product_id
+    product_id: "most-prod-2",
     image: productImg1,
     name: "Nonpareil Almonds",
     subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "18.99$",
-    basePrice: 950
+    price: "₹590",
+    basePrice: 590
   },
   {
-    product_id: "most-prod-3", // Changed to unique product_id
+    product_id: "most-prod-3",
     image: productImg1,
     name: "California Almonds",
     subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "19.49$",
-    basePrice: 975
-  },
-  {
-    product_id: "most-prod-4", // Changed to unique product_id
-    image: productImg1,
+    price: "₹590",  
+    basePrice: 590  
+  },  
+  { 
+    product_id: "most-prod-4",  
+    image: productImg1, 
     name: "Mamra Almonds",
     subcategory: "(Almond)",
     weight: "250 gm.",
-    price: "22.79$",
-    basePrice: 1140
+    price: "₹590",
+    basePrice: 590
   },
-   {
-    product_id: "most-prod-1",
+  {
+    product_id: "most-prod-5",
     image: productImg1,
     name: "Carmel Almonds",
     subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "17.29$",
-    basePrice: 870
+    price: "₹590",
+    basePrice: 590
   },
   {
-    product_id: "most-prod-2", // Changed to unique product_id
+    product_id: "most-prod-6",
     image: productImg1,
     name: "Nonpareil Almonds",
     subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "18.99$",
-    basePrice: 950
+    price: "₹590",
+    basePrice: 590
   },
   {
-    product_id: "most-prod-3", // Changed to unique product_id
+    product_id: "most-prod-7",
     image: productImg1,
     name: "California Almonds",
     subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "19.49$",
-    basePrice: 975
+    price: "₹590",
+    basePrice: 590
   },
   {
-    product_id: "most-prod-4", // Changed to unique product_id
+    product_id: "most-prod-8",
     image: productImg1,
     name: "Mamra Almonds",
     subcategory: "(Almond)",
     weight: "250 gm.",
-    price: "22.79$",
-    basePrice: 1140
+    price: "₹590",
+    basePrice: 590
   },
 ];

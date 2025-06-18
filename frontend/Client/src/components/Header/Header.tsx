@@ -1,38 +1,32 @@
-
-
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   FiMenu,
   FiSearch,
   FiHeart,
   FiShoppingCart,
   FiUser,
+  FiX,
 } from 'react-icons/fi';
 import { Image } from 'react-bootstrap';
 import './Header.css';
-
 import logo from '../../assets/images/logo11-removebg-preview.png';
 import { useCart } from '../../contexts/CartContext';
+import { Product, products } from '@/data/productData';
+import ProductCard from '../products/ProductCard';
+import { ToastContainer } from 'react-toastify';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
-  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
   const [isCartHovered, setIsCartHovered] = useState(false);
+   const [isSearchVisible, setIsSearchVisible] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState<Product[]>([]);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const { cart } = useCart();
   
-  // Set active link based on current path when component mounts or location changes
-  useEffect(() => {
-    const path = location.pathname;
-    if (path === '/') setActiveLink('Home');
-    else if (path === '/about-us') setActiveLink('About Us');
-    else if (path === '/shop') setActiveLink('Shop');
-    else if (path === '/blog') setActiveLink('Blog');
-    else if (path === '/contact-us') setActiveLink('Contact Us');
-  }, [location.pathname]);
-
   // Calculate the number of unique products in the cart
   const uniqueProductCount = cart.length;
 
@@ -43,21 +37,147 @@ const Header: React.FC = () => {
   const handleLinkClick = (link: string) => {
     setActiveLink(link);
     setIsMenuOpen(false);
+    // Scroll to top when any link is clicked
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   };
+
 
   const mewaloOnClick = () => {
     navigate('/');
+    // Scroll to top when logo is clicked
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   };
 
+   const toggleSearch = () => {
+    setIsSearchVisible(!isSearchVisible);
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const term = e.target.value;
+    setSearchTerm(term);
+    
+    if (term.length > 0) {
+      const results = products.filter(product => 
+        product.name.toLowerCase().includes(term.toLowerCase())
+      );
+      setSearchResults(results);
+    } else {
+      setSearchResults([]);
+    }
+    
+    // Reset selected product when search term changes
+    setSelectedProduct(null);
+  };
+
+  //  const handleProductSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const selectedName = e.target.value;
+  //   const product = products.find(p => p.name === selectedName);
+    
+  //   if (product) {
+  //     setSelectedProduct(product);
+  //     setSearchTerm(product.name);
+  //     setSearchResults([]);
+  //   }
+  // };
+
+    // Handle search input changes
+  useEffect(() => {
+    if (searchTerm.length > 0) {
+      const results = products.filter(product => 
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setSearchResults(results);
+    } else {
+      setSearchResults([]);
+    }
+  }, [searchTerm]);
+
+   // Close search when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const searchContainer = document.querySelector('.fixed-search-bar');
+      if (isSearchVisible && searchContainer && !searchContainer.contains(e.target as Node)) {
+        toggleSearch();
+      }
+    };
+
+    if (isSearchVisible) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isSearchVisible]);
+
   return (
+    <>
+{isSearchVisible && (
+  <div className="fixed-search-bar">
+    <div className="search-header">
+      <div className="search-container">
+        <FiSearch size={24} className="search-icon" />
+        <input 
+          type="text"
+          placeholder="Search products..." 
+          className="search-input"
+          autoFocus
+          value={searchTerm}
+          onChange={handleSearchChange}
+        />
+        <button className="close-search" onClick={toggleSearch}>
+          <FiX size={24} />
+        </button>
+      </div>
+    </div>
+    
+    <div className="divider"></div>
+    
+    <div className="search-results-container">
+      {searchResults.length > 0 ? (
+        <div className="search-results-grid">
+          {searchResults.map(product => (
+            <div 
+              key={product.product_id} 
+              className="product-card-wrapper"
+              onClick={() => {
+                navigate(`/product/${product.product_id}`);
+                toggleSearch();
+              }}
+            >
+              <ProductCard data={[product]} />
+            </div>
+          ))}
+        </div>
+      ) : searchTerm.length > 0 ? (
+        <div className="no-results">No products found</div>
+      ) : (
+        <div className="start-searching">Start typing to search for products</div>
+      )}
+    </div>
+    
+    {/* Add ToastContainer inside the search overlay */}
+    <ToastContainer
+      position="top-center"
+      autoClose={2000}
+      hideProgressBar
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="colored"
+      className="search-toast-container"
+    />
+  </div>
+)}
+      {/* Header  */}
     <header className="header">
       {/* Top Header */}
       <div className="header-top">
@@ -145,6 +265,16 @@ const Header: React.FC = () => {
             >
               LOG IN
             </Link>
+            {/* search  */}
+              <div 
+                className="icon-button" 
+                onClick={toggleSearch}
+                style={{ cursor: 'pointer' }}
+              >
+                <FiSearch size={24} />
+              </div>
+              
+            {/* wishlist  */}
             <Link 
               to="/wishlist" 
               className="icon-button"
@@ -234,6 +364,7 @@ const Header: React.FC = () => {
         </div>
       </div>
     </header>
+    </>
   );
 };
 

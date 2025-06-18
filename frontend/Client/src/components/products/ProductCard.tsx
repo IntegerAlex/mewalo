@@ -40,18 +40,19 @@ interface ProductCardProps {
 const ProductCard = ({ data }: ProductCardProps) => {
   return (
     <div className="productCards container">
-      <ToastContainer 
-        position="top-center"
-        autoClose={2000}
-        hideProgressBar
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
+      {/* // Remove this from ProductCard.tsx */}
+<ToastContainer 
+  position="top-center"
+  autoClose={2000}
+  hideProgressBar
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  theme="colored"
+/>
       {data.map((product) => (
         <ProductItem key={product.product_id} product={product} />
       ))}
@@ -82,14 +83,14 @@ const ProductItem = ({ product }: { product: Product }) => {
   const handleIncrement = () => {
     const newCount = count + 1;
     const newItem = {
-      id: product.product_id, // Using product_id instead of id
+      id: product.product_id,
       name: product.name,
-      img: product.image, // Changed from img to image
-      type: product.subcategory, // Using subcategory as type
+      img: product.image,
+      type: product.subcategory,
       quantity: newCount,
       selectedQuantity: selectedQuantity,
-      price: basePrice, // Already in rupees
-      totalPrice: basePrice * selectedQuantity * newCount,
+      price: basePrice,
+      totalPrice: Math.floor(basePrice * selectedQuantity * newCount),
     };
 
     if (count === 0) {
@@ -125,7 +126,7 @@ const ProductItem = ({ product }: { product: Product }) => {
     if (productIndex === -1) {
       const newWishlistItem = {
         ...product,
-        basePrice: basePrice
+        basePrice: Math.floor(basePrice)
       };
       wishlist.push(newWishlistItem);
       setIsWishlisted(true);
@@ -145,8 +146,8 @@ const ProductItem = ({ product }: { product: Product }) => {
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
   };
 
-  const finalPrice = (basePrice * selectedQuantity).toFixed(2);
-  const totalPrice = cartItem ? cartItem.totalPrice.toFixed(2) : '0.00';
+  const finalPrice = Math.floor(basePrice * selectedQuantity);
+  const totalPrice = cartItem ? Math.floor(cartItem.totalPrice) : 0;
 
   return (
     <div className="productCard-item">
