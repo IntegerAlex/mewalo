@@ -55,7 +55,7 @@ const WishlistPage = () => {
 
   return (
     <div className="wishlist-page container">
-      <ToastContainer 
+       <ToastContainer 
         position="top-center"
         autoClose={2000}
         hideProgressBar
@@ -73,7 +73,6 @@ const WishlistPage = () => {
         //   width: 'fit-content',
         // }}
       />
-      
       <h1>Your Wishlist</h1>
       {wishlist.length === 0 ? (
         <div className="empty-wishlist">

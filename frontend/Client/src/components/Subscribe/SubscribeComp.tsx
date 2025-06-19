@@ -1,9 +1,21 @@
-import React from 'react'
-
+import React, { FormEvent } from 'react'
+import * as yup from 'yup'
 // import subscribeBg from '../../assets/images/subscribeBg.png'
 import './SubscribeComp.css'
 
 const SubscribeComp = () => {
+    const subscribeFormSchema =yup.object().shape({
+        subscribeInput: yup.string().email('Invalid email').required('Email is required'),
+    })
+
+    const handleSubscribe = (e:FormEvent<HTMLFormElement>) =>{
+        e.preventDefault();
+        let form = e.currentTarget;
+        let formData = new FormData(form);
+        let formDataObj = Object.fromEntries(formData.entries());
+        console.log(formDataObj)
+    }
+
   return (
     <>
     <div className="container-fluid" id='subscribeNow'>
@@ -19,10 +31,10 @@ const SubscribeComp = () => {
                 <div className="subscribe-text2">
                     Get 25% off on your first order just by subscribing to our newsletter
                 </div>
-                <div className="subscribe-input-div">
-                    <input className='subscribe-input' type="text" placeholder='Enter Email Address' />
+                <form className="subscribe-input-div" onSubmit={handleSubscribe}>
+                    <input className='subscribe-input' name='subscribeInput' type="text" placeholder='Enter Email Address' />
                     <button className='subscribe-button'>Subscribe</button>
-                </div>
+                </form>
             </div>
         </div>
     </div>

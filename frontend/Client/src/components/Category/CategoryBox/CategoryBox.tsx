@@ -100,8 +100,7 @@ const CategoryBox: React.FC = () => {
                 <div
                   className="category-card"
                   key={category.cName}
-                  onMouseEnter={() => setActiveCategory(category.cName)}
-                  onMouseLeave={() => setActiveCategory(null)}
+                  
                 >
                   <div className="categoryBox">
                     <div className="category-image-container">
@@ -109,6 +108,8 @@ const CategoryBox: React.FC = () => {
                         src={category.cImg} 
                         alt={category.cName} 
                         className="category-image" 
+                        onMouseEnter={() => setActiveCategory(category.cName)}
+                  onMouseLeave={() => setActiveCategory(null)}
                       />
                     </div>
                     <div className="category-label">{category.cName}</div>
@@ -117,7 +118,7 @@ const CategoryBox: React.FC = () => {
                       <div className="hover-list-box">
                         <ul>
                           {categoryItems.map((product) => (
-                            <li key={product.id}>
+                            <li key={product.product_id}>
                               {getProductName(category.cName, product)}
                             </li>
                           ))}

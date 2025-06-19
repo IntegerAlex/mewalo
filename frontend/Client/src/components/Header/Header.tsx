@@ -13,8 +13,10 @@ import './Header.css';
 import logo from '../../assets/images/logo11-removebg-preview.png';
 import { useCart } from '../../contexts/CartContext';
 import { Product, products } from '@/data/productData';
-import ProductCard from '../products/ProductCard';
-import { ToastContainer } from 'react-toastify';
+// import ProductCard from '../products/ProductCard';
+// import { ToastContainer } from 'react-toastify';
+// import LOGO from '../../assets/images/LOGO.svg'
+import SearchComp from '../SearchComp/SearchComp';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -54,9 +56,9 @@ const Header: React.FC = () => {
     });
   };
 
-   const toggleSearch = () => {
-    setIsSearchVisible(!isSearchVisible);
-  };
+const toggleSearch = () => {
+  setIsSearchVisible(!isSearchVisible);
+};
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const term = e.target.value;
@@ -117,66 +119,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-{isSearchVisible && (
-  <div className="fixed-search-bar">
-    <div className="search-header">
-      <div className="search-container">
-        <FiSearch size={24} className="search-icon" />
-        <input 
-          type="text"
-          placeholder="Search products..." 
-          className="search-input"
-          autoFocus
-          value={searchTerm}
-          onChange={handleSearchChange}
-        />
-        <button className="close-search" onClick={toggleSearch}>
-          <FiX size={24} />
-        </button>
-      </div>
-    </div>
-    
-    <div className="divider"></div>
-    
-    <div className="search-results-container">
-      {searchResults.length > 0 ? (
-        <div className="search-results-grid">
-          {searchResults.map(product => (
-            <div 
-              key={product.product_id} 
-              className="product-card-wrapper"
-              onClick={() => {
-                navigate(`/product/${product.product_id}`);
-                toggleSearch();
-              }}
-            >
-              <ProductCard data={[product]} />
-            </div>
-          ))}
-        </div>
-      ) : searchTerm.length > 0 ? (
-        <div className="no-results">No products found</div>
-      ) : (
-        <div className="start-searching">Start typing to search for products</div>
-      )}
-    </div>
-    
-    {/* Add ToastContainer inside the search overlay */}
-    <ToastContainer
-      position="top-center"
-      autoClose={2000}
-      hideProgressBar
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="colored"
-      className="search-toast-container"
-    />
-  </div>
-)}
+
       {/* Header  */}
     <header className="header">
       {/* Top Header */}
@@ -267,12 +210,15 @@ const Header: React.FC = () => {
             </Link>
             {/* search  */}
               <div 
-                className="icon-button" 
-                onClick={toggleSearch}
-                style={{ cursor: 'pointer' }}
-              >
-                <FiSearch size={24} />
-              </div>
+  className="icon-button" 
+  style={{ cursor: 'pointer' }}
+  onClick={() => {
+    toggleSearch();  // Call your toggleSearch function
+    navigate('/search');  // Then navigate to search page
+  }}
+>
+  <FiSearch size={24} />
+</div>
               
             {/* wishlist  */}
             <Link 

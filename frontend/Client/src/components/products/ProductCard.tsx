@@ -11,9 +11,10 @@ import {
 import CounterButton from "./CounterButton";
 import { useCart } from "../../contexts/CartContext";
 import { FiHeart } from 'react-icons/fi';
-import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+
+// Move ToastContainer to your main App component or Layout component
+// Only include it once in your application
 
 const quantityOptions = [
   { label: "200 gm", value: 0.2 },
@@ -25,8 +26,7 @@ interface Product {
   name: string;
   image: string;
   subcategory: string;
-  price: string; // Already in rupees
-  // Other fields from your API
+  price: string;
 }
 
 interface WishlistItem extends Product {
@@ -40,19 +40,6 @@ interface ProductCardProps {
 const ProductCard = ({ data }: ProductCardProps) => {
   return (
     <div className="productCards container">
-      {/* // Remove this from ProductCard.tsx */}
-<ToastContainer 
-  position="top-center"
-  autoClose={2000}
-  hideProgressBar
-  newestOnTop={false}
-  closeOnClick
-  rtl={false}
-  pauseOnFocusLoss
-  draggable
-  pauseOnHover
-  theme="colored"
-/>
       {data.map((product) => (
         <ProductItem key={product.product_id} product={product} />
       ))}
@@ -61,8 +48,8 @@ const ProductCard = ({ data }: ProductCardProps) => {
 };
 
 const ProductItem = ({ product }: { product: Product }) => {
-  const navigate = useNavigate();
-  const basePrice = parseFloat(product.price); // Already in rupees
+  // Fix price parsing - remove ₹ symbol if present
+  const basePrice = parseFloat(product.price.replace(/[^0-9.]/g, ''));
   const [selectedQuantity, setSelectedQuantity] = useState(0.2);
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -97,7 +84,11 @@ const ProductItem = ({ product }: { product: Product }) => {
       addToCart(newItem);
       toast.success(`${product.name} added to cart!`, {
         position: "top-center",
-        className: 'centered-toast'
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
       });
     } else {
       updateCartItem(product.product_id, newCount);
@@ -111,12 +102,17 @@ const ProductItem = ({ product }: { product: Product }) => {
       removeFromCart(product.product_id);
       toast.error(`${product.name} removed from cart!`, {
         position: "top-center",
-        className: 'centered-toast'
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
       });
     }
   };
 
-  const toggleWishlist = () => {
+  const toggleWishlist = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setIsAnimating(true);
     setTimeout(() => setIsAnimating(false), 500);
     
@@ -132,14 +128,22 @@ const ProductItem = ({ product }: { product: Product }) => {
       setIsWishlisted(true);
       toast.success(`${product.name} added to wishlist!`, {
         position: "top-center",
-        className: 'centered-toast'
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
       });
     } else {
       wishlist.splice(productIndex, 1);
       setIsWishlisted(false);
       toast.error(`${product.name} removed from wishlist!`, {
         position: "top-center",
-        className: 'centered-toast'
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
       });
     }
     

@@ -402,8 +402,15 @@ a {
   justify-content: center;
   align-items: center;
   height: 100%;
-  color: #777;
+  color: var(--dark-plum);
+  gap: 20px;
   font-size: 1.2rem;
+  flex-direction: column;
+}
+
+.start-searching>image{
+  height: 200px !important;
+  width: 200px !important;
 }
 
 .search-toast-container {

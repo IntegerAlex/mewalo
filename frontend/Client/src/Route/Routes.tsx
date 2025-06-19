@@ -8,10 +8,13 @@ import BlogPage from "../Pages/BlogPage";
 import ShopPage from "../Pages/ShopPage";
 import PageNotFound from "@/PageNotFound";
 import CartPage from "@/components/CartPage/CartPage";
-import LoginRegister from "@/components/LoginRegister/LoginRegister";
+// import LoginRegister from "@/components/LoginRegister/LoginRegister";
 import ProductDetailPage from "@/components/products/ProductDetailPage";
 import OtpInput from "@/components/OtpInput/OtpInput";
 import WishlistPage from "@/components/whishlist/WishlistPage";
+import Login from "@/components/login/Login";
+import Register from "@/components/register/Register";
+import SearchComp from "@/components/SearchComp/SearchComp";
 
 // import SignupSignin from "@/components/SIgnUp&SingIn/SignupSignin";
 
@@ -27,22 +30,16 @@ const routes: RouteObject[] = [
       { path: 'blog', element: <BlogPage /> },
       { path: 'shop', element: <ShopPage /> }, 
       { path: 'cart', element: <CartPage /> }, 
-      { path: 'login', element: <LoginRegister /> }, 
+      // { path: 'login', element: <LoginRegister /> }, 
       { path: 'detail', element : <ProductDetailPage/>},
       { path: 'otp', element : <OtpInput/>},
       { path: 'wishlist', element : <WishlistPage/>},
+      { path: 'login', element : <Login/>},
+      { path: 'register', element : <Register/>},
+      { path: 'search', element : <SearchComp/>},
 
       
-    //   { path: '/cart', element: <Cart /> },
-    //   { path: '/payment', element: <Payment /> },
-    //   { path: '/singleproduct', element: <SingleProduct /> },
-    //   { path: '/singleProductDetail', element: <SingleProductDetails /> },
-    //   { path: '/cartFilter', element: <CartFilter /> },
-    //   { path: '/shops/seeds', element: <Seed /> },
-    //   { path: '/shops/nuts', element: <Nuts /> },
-    //   { path: '/shops/dryfruits', element: <DryFruit /> },
-    //   { path: '/shops/snacks', element: <Snacks /> },
-    //   { path: '/category/dryfruit', element: <SingleProduct /> },
+
       { path: '*', element: <PageNotFound/> }
     ]
   }

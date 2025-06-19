@@ -7,6 +7,7 @@ import { useFormik } from 'formik'
 import { useNavigate } from 'react-router-dom'
 import FreeShipping from '../FreeShipping/FreeShipping'
 import SubscribeComp from '../Subscribe/SubscribeComp'
+// import SubscribeComp from '../Subscribe/SubscribeComp'
 
 const registerSchema = yup.object().shape({
   username: yup.string().required('Username is required').min(3, 'Username must be at least 3 characters'),

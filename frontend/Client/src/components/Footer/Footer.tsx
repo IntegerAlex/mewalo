@@ -14,6 +14,7 @@ import { FaCcVisa } from "react-icons/fa";
 import { FaCcAmazonPay } from "react-icons/fa";
 import { FaApplePay } from "react-icons/fa6";
 import { SiPaytm } from "react-icons/si";
+import { FaWhatsapp } from "react-icons/fa";
 import { IoBagRemoveSharp } from "react-icons/io5";
 import { BsGift } from "react-icons/bs";
 import { IoMdHelpCircleOutline } from "react-icons/io";
@@ -34,10 +35,10 @@ const Footer = () => {
               {/* <li>Customer satisfaction is our goal</li> */}
             </ul>
             <div className="footer-payment">
-              <a href="#"><FaCcVisa /></a>
-              <a href="#"><FaCcAmazonPay /></a>
-              <a href="#"><FaApplePay /></a>
-              <a href="#"><SiPaytm /></a>
+              <a href="#"><FaCcVisa className="footer-payment-icon" fontSize={32}/></a>
+              <a href="#"><FaCcAmazonPay className="footer-payment-icon" fontSize={32}/></a>
+              <a href="#"><FaApplePay className="footer-payment-icon" fontSize={32}/></a>
+              <a href="#"><SiPaytm className="footer-payment-icon" fontSize={32}/></a>
             </div>
           </Col>
 
@@ -75,7 +76,7 @@ const Footer = () => {
               <a href="#"><FaFacebookF /></a>
               <a href="#"><FaTwitter /></a>
               <a href="#"><FaInstagram /></a>
-              <a href="#"><FaLinkedin /></a>
+              <a href="https://whatsapp.com/channel/0029VbAr6MEC6ZvizpQn2f2k" target="_blank"><FaWhatsapp /></a>
             </div>
           </Col>
         </Row>
