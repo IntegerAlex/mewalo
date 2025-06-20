@@ -9,7 +9,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
-import { products } from "@/data/productData";
+// import { products } from "@/data/productData";
+import { mostSellingData } from "@/data/mostSelling";
+// import { products } from "@/data/productData";
 
 const MostSelling = () => {
   const navigate = useNavigate();
@@ -23,7 +25,7 @@ const MostSelling = () => {
       <div className="container mostSelling">
         {/* Most Selling heading */}
         <div className="mostSelling-heading d-flex justify-content-between align-items-center">
-          <h2 className="mostSelling-title">Best Selling</h2>
+          <h2 className="mostSelling-title m-0">Just for you</h2>
           <div
             className="mostSelliing-seeMore d-flex align-items-center gap-2"
             onClick={showShopPage}
@@ -69,7 +71,7 @@ const MostSelling = () => {
           modules={[Autoplay, Pagination]}
           className="mySwiper"
         >
-          {products.map((product, index) => (
+          {mostSellingData.map((product, index) => (
             <SwiperSlide key={index}>
               <ProductCard data={[product]} />
             </SwiperSlide>

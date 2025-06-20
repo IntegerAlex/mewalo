@@ -7,11 +7,17 @@ import { berrieData } from '@/data/Berries';
 import { nutsData } from '@/data/nuts';
 import { seedsData } from '@/data/seed';
 import { datesData } from '@/data/date';
-import { products } from '@/data/productData';
 import ProductCard from '../products/ProductCard';
 import { mostSellingData } from '@/data/mostSelling';
 import { FiChevronDown, FiChevronUp, FiX } from 'react-icons/fi';
+import { Product } from '@/data/type';
+import { products } from '@/data/productData';
+// import { Product, products } from '@/data/productData';
 
+interface ProductCardProps {
+  data: Product[]; // Should match the Product interface
+  limit?: number;
+}
 // Define a type for your category keys
 type CategoryKey = 'ALL' | 'DryFruits' | 'Seeds' | 'Nuts' | 'Berries' | 'Dates' | 'mostSelling';
 

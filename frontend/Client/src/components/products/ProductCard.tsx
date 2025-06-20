@@ -24,7 +24,7 @@ interface Product {
   image: string;
   subcategory: string;
   price: string;
-  isStock: boolean; // Added isStock to the Product interface
+  isStock: boolean; 
 }
 
 interface WishlistItem extends Product {
@@ -33,6 +33,7 @@ interface WishlistItem extends Product {
 
 interface ProductCardProps {
   data: Product[];
+  limit?: number;
 }
 
 const ProductCard = ({ data }: ProductCardProps) => {

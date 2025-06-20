@@ -3,8 +3,14 @@ import { Image } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { FiSearch, FiX } from 'react-icons/fi';
 import LOGO from '../../assets/images/LOGO.svg';
-import { Product, products } from '@/data/productData';
+// import { Product, products } from '@/data/productData';
 import ProductCard from '../products/ProductCard';
+import { Product, products } from '@/data/productData';
+
+interface ProductCardProps {
+  data: Product[]; // Should match the Product interface
+  limit?: number;
+}
 
 const SearchComp = () => {
   const [searchTerm, setSearchTerm] = useState('');

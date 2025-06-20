@@ -10,6 +10,7 @@ interface Product {
   image: string;
   subcategory: string;
   price: string;
+  isStock:boolean;
 }
 
 const SearchResults: React.FC = () => {
