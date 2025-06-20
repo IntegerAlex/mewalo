@@ -9,13 +9,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 20px;
 }
+
 
 .aboutUsBannerContainer::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('../../assets/images/AboutUsBanner11.jpg');
+  background-image: url('../../assets/images/aboutUsBg13.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

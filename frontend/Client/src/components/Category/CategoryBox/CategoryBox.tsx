@@ -100,16 +100,15 @@ const CategoryBox: React.FC = () => {
                 <div
                   className="category-card"
                   key={category.cName}
-                  
+                  onMouseEnter={() => setActiveCategory(category.cName)}
+                  onMouseLeave={() => setActiveCategory(null)}
                 >
                   <div className="categoryBox">
                     <div className="category-image-container">
                       <img 
                         src={category.cImg} 
                         alt={category.cName} 
-                        className="category-image" 
-                        onMouseEnter={() => setActiveCategory(category.cName)}
-                  onMouseLeave={() => setActiveCategory(null)}
+                        className="category-image"
                       />
                     </div>
                     <div className="category-label">{category.cName}</div>

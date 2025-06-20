@@ -50,7 +50,7 @@ const BlogContent = () => {
 
               <div className="blogContent-title">{blog.title}</div>
 
-              <div className="blogContent-desc">{blog.info}</div>
+              <div className="blogContent-desc">{blog.article}</div>
 
               <div className="blogContent-readMore">
                 <Button className="blogContent-readMore-btn">Read More</Button>

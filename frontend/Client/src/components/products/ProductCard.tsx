@@ -13,9 +13,6 @@ import { useCart } from "../../contexts/CartContext";
 import { FiHeart } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 
-// Move ToastContainer to your main App component or Layout component
-// Only include it once in your application
-
 const quantityOptions = [
   { label: "200 gm", value: 0.2 },
   { label: "1 kg", value: 1 },
@@ -27,6 +24,7 @@ interface Product {
   image: string;
   subcategory: string;
   price: string;
+  isStock: boolean; // Added isStock to the Product interface
 }
 
 interface WishlistItem extends Product {
@@ -48,7 +46,6 @@ const ProductCard = ({ data }: ProductCardProps) => {
 };
 
 const ProductItem = ({ product }: { product: Product }) => {
-  // Fix price parsing - remove ₹ symbol if present
   const basePrice = parseFloat(product.price.replace(/[^0-9.]/g, ''));
   const [selectedQuantity, setSelectedQuantity] = useState(0.2);
   const [isWishlisted, setIsWishlisted] = useState(false);
@@ -183,15 +180,19 @@ const ProductItem = ({ product }: { product: Product }) => {
           <Select 
             value={selectedQuantity.toString()} 
             onValueChange={handleQuantityChange}
-            disabled={count > 0}
+            disabled={count > 0 || !product.isStock} // Disable if out of stock
           >
-            <SelectTrigger className="w-1/2 mx-auto mt-auto mb-2 text-center border-2 rounded product-quantity">
+            <SelectTrigger className="product-quantity">
               <SelectValue placeholder="Select Quantity"/>
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="product-quantity-content">
               <SelectGroup>
                 {quantityOptions.map((option) => (
-                  <SelectItem key={option.value} value={option.value.toString()}>
+                  <SelectItem 
+                    key={option.value} 
+                    value={option.value.toString()}
+                    className="product-quantity-item"
+                  >
                     {option.label}
                   </SelectItem>
                 ))}
@@ -208,13 +209,19 @@ const ProductItem = ({ product }: { product: Product }) => {
           </div>
         )}
 
-        <div className="productCard-button">
-          <CounterButton
-            count={count}
-            onIncrement={handleIncrement}
-            onDecrement={handleDecrement}
-          />
+        {product.isStock ? (
+          <div className="productCard-button">
+            <CounterButton
+              count={count}
+              onIncrement={handleIncrement}
+              onDecrement={handleDecrement}
+            />
+          </div>
+        ) : (
+         <div className="productCard-Notify">
+          <button className="productCard-Notify-btn">NOTIFY</button>
         </div>
+        )}
       </div>
     </div>
   );

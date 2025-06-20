@@ -5,8 +5,8 @@
   import './HomeBg.css';
 
   import slideBgImg1 from '../../assets/images/LOGO.svg';
-  import slideBgImg2 from '../../assets/images/bgImg1.jpg';
-  import slideBgImg3 from '../../assets/images/shopBanner11.jpg';
+  import slideBgImg2 from '../../assets/images/homeBg13.jpg';
+  import slideBgImg3 from '../../assets/images/homeBg2.jpg';
 
   import 'swiper/css';
   import 'swiper/css/navigation';
@@ -92,16 +92,6 @@
             </SwiperSlide>
           ))}
         </Swiper>
-
-        {/* Navigation Arrows */}
-        {/* <div className="slider-navigation">
-          <div className="slider-arrow prev" ref={prevRef}>
-            <FaArrowLeftLong />
-          </div>
-          <div className="slider-arrow next" ref={nextRef}>
-            <FaArrowRight />
-          </div>
-        </div> */}
       </div>
     );
   };

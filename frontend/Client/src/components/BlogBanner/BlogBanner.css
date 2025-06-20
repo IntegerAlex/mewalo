@@ -15,7 +15,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('../../assets/images/blogBanner.jpg'); /* reuse the same image */
+  background-image: url('../../assets/images/blogBg12.jpg'); /* reuse the same image */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

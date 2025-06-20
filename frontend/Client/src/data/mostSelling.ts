@@ -7,6 +7,7 @@ export interface Product {
   name: string;
   subcategory: string;
   price: string;
+  isStock : boolean;
 }
 
 export const mostSellingData: Product[] = [
@@ -16,6 +17,7 @@ export const mostSellingData: Product[] = [
     name: "Carmel Almonds",
     subcategory: "(Almond)",
     price: "₹590",
+    isStock:true,
   },
   {
     product_id: "most-prod-2",
@@ -23,13 +25,15 @@ export const mostSellingData: Product[] = [
     name: "Nonpareil Almonds",
     subcategory: "(Almond)",
     price: "₹590",
+    isStock:true,
   },
   {
     product_id: "most-prod-3",
     image: productImg1,
     name: "California Almonds",
     subcategory: "(Almond)",
-    price: "₹590",    
+    price: "₹590", 
+    isStock:true,
   },  
   { 
     product_id: "most-prod-4",  
@@ -37,6 +41,7 @@ export const mostSellingData: Product[] = [
     name: "Mamra Almonds",
     subcategory: "(Almond)",
     price: "₹590",
+    isStock:false,
   },
   {
     product_id: "most-prod-5",
@@ -44,6 +49,7 @@ export const mostSellingData: Product[] = [
     name: "Carmel Almonds",
     subcategory: "(Almond)",
     price: "₹590",
+    isStock:true,
   },
   {
     product_id: "most-prod-6",
@@ -51,6 +57,7 @@ export const mostSellingData: Product[] = [
     name: "Nonpareil Almonds",
     subcategory: "(Almond)",
     price: "₹590",
+    isStock:true,
   },
   {
     product_id: "most-prod-7",
@@ -58,6 +65,7 @@ export const mostSellingData: Product[] = [
     name: "California Almonds",
     subcategory: "(Almond)",
     price: "₹590",
+    isStock:true,
   },
   {
     product_id: "most-prod-8",
@@ -65,5 +73,6 @@ export const mostSellingData: Product[] = [
     name: "Mamra Almonds",
     subcategory: "(Almond)",
     price: "₹590",
+    isStock:false,
   },
 ];

@@ -6,6 +6,7 @@ import './WishlistPage.css';
 import { FiHeart } from 'react-icons/fi';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Similar from '../Similar/Similar';
 
 interface WishlistItem {
   product_id: string;
@@ -111,6 +112,8 @@ const WishlistPage = () => {
           ))}
         </div>
       )}
+
+      <Similar/>
     </div>
   );
 };

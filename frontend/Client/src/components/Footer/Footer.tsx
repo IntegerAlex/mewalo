@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Add useNavigate
 import {
   FaFacebookF,
   FaTwitter,
@@ -22,17 +22,35 @@ import logo from '../../assets/images/logo11-removebg-preview.png'
 import "./Footer.css";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  // Function to handle link clicks with scroll to top
+  const handleLinkClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className="footer">
       <Container fluid>
         <Row className="footer-row">
           {/* 1. Logo and company info */}
           <Col md={3} sm={12} className="footer-box animate-footer">
-            <img src={logo} alt="Logo" className="footer-logo" />
+            <img 
+              src={logo} 
+              alt="Logo" 
+              className="footer-logo" 
+              onClick={() => {
+                navigate('/');
+                handleLinkClick();
+              }}
+              style={{ cursor: 'pointer' }}
+            />
             <ul className="footer-info">
               <li>We provide quality products</li>
               <li>Serving since 2020</li>
-              {/* <li>Customer satisfaction is our goal</li> */}
             </ul>
             <div className="footer-payment">
               <a href="#"><FaCcVisa className="footer-payment-icon" fontSize={32}/></a>
@@ -46,10 +64,38 @@ const Footer = () => {
           <Col md={3} sm={12} className="footer-box animate-footer">
             <h5 className="footer-heading">Active Links</h5>
             <ul className="footer-links">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about-us">About</Link></li>
-              <li><Link to="/shop">Shop</Link></li>
-              <li><Link to="/contact-us">Contact</Link></li>
+              <li>
+                <Link 
+                  to="/" 
+                  onClick={handleLinkClick}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/about-us" 
+                  onClick={handleLinkClick}
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/shop" 
+                  onClick={handleLinkClick}
+                >
+                  Shop
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/contact-us" 
+                  onClick={handleLinkClick}
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </Col>
 
@@ -57,10 +103,38 @@ const Footer = () => {
           <Col md={3} sm={12} className="footer-box animate-footer">
             <h5 className="footer-heading">Account Info</h5>
             <ul className="footer-links">
-              <li><Link to="/account">My Account</Link></li>
-              <li><Link to="/privacy">Privacy</Link></li>
-              <li><Link to="/help">Help</Link></li>
-              <li><Link to="/terms">Terms & Conditions</Link></li>
+              <li>
+                <Link 
+                  to="/account" 
+                  onClick={handleLinkClick}
+                >
+                  My Account
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/privacy" 
+                  onClick={handleLinkClick}
+                >
+                  Privacy
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/help" 
+                  onClick={handleLinkClick}
+                >
+                  Help
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/terms" 
+                  onClick={handleLinkClick}
+                >
+                  Terms & Conditions
+                </Link>
+              </li>
             </ul>
           </Col>
 
@@ -73,41 +147,14 @@ const Footer = () => {
               <li><FaPhoneAlt /> +91-9876543210</li>
             </ul>
             <div className="footer-social">
-              <a href="#"><FaFacebookF /></a>
+              <a href="https://www.facebook.com/61577412274360/posts/pfbid02mAn1g6KB3FnfPTYV7LmkRjs5pGUPqBzTd3hcZ4K8R7RiMdUZjzGCFABw5TmDwzMsl/?app=fbl" target="_blank"><FaFacebookF /></a>
               <a href="#"><FaTwitter /></a>
-              <a href="#"><FaInstagram /></a>
+              <a href="https://www.instagram.com/p/DLFwSRgSjFb/?igsh=cWk1ejZpb2E1ZGZq" target="_blank"><FaInstagram /></a>
               <a href="https://whatsapp.com/channel/0029VbAr6MEC6ZvizpQn2f2k" target="_blank"><FaWhatsapp /></a>
             </div>
           </Col>
         </Row>
-
-        
       </Container>
-      {/* <div className="bottom-footer">
-        <div className="bottom-footer1">
-          <div className="footer-become-seller">
-          <IoBagRemoveSharp />
-          <div>Become Seller</div>
-          </div>
-          <div className="footer-become-seller">
-            <BsGift />
-          <div>Gift Cards</div>
-          </div>
-          <div className="footer-become-seller">
-          <IoMdHelpCircleOutline />
-          <div>Help Center</div>
-          </div>
-          </div>
-
-          <div className="bottom-footer2">
-            <div>Term Use</div>
-            <div>Privacy Policy</div>
-          </div>
-
-          <div className="bottom-footer3">
-            All Right reserved by mewalo | 2025
-          </div>
-        </div> */}
     </div>
   );
 };

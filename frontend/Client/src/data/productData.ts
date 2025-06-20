@@ -8,6 +8,7 @@ export interface Product {
   subcategory: string;
   weight: string;
   price: string;
+  isStock:Boolean;
 }
 
 export const products: Product[] = [
@@ -17,15 +18,17 @@ export const products: Product[] = [
     name: "Carmel Almonds",
     subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "300"
+    price: "300",
+    isStock:true,
   },
   {
-    product_id:'prod-2',
+    product_id:'prod2',
     image: productImg1,
     name: "Nonpareil Almonds",
     subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "900"
+    price: "900",
+    isStock:false,
   },
   {
     product_id:'prod-3',
@@ -33,7 +36,8 @@ export const products: Product[] = [
     name: "California Almonds",
     subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "700"
+    price: "700",
+    isStock:false
   },
   {
     product_id:'prod-4',
@@ -41,7 +45,8 @@ export const products: Product[] = [
     name: "Mamra Almonds",
     subcategory: "(Almond)",
     weight: "250 gm.",
-    price: "1200"
+    price: "1200",
+    isStock:true,
   },
   {
     product_id:'prod-5',
@@ -49,7 +54,8 @@ export const products: Product[] = [
     name: "Gurbandi Almonds",
     subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "1500"
+    price: "1500",
+    isStock:true,
   },
   {
     product_id:'prod-6',
@@ -57,7 +63,8 @@ export const products: Product[] = [
     name: "Sweet Almonds",
     subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "1500"
+    price: "1500",
+    isStock:false,
   },
   {
     product_id:'prod-7',
@@ -65,7 +72,8 @@ export const products: Product[] = [
     name: "Peerless Almonds",
     subcategory: "(Almond)",
     weight: "500 gm.",
-    price: "1500"
+    price: "1500",
+    isStock:true,
   },
   {
     product_id:'prod-8',
@@ -73,6 +81,7 @@ export const products: Product[] = [
     name: "Italian Avocado",
     subcategory: "(Local shop)",
     weight: "500 gm.",
-    price: "1400"
+    price: "1400",
+    isStock:true,
   }
 ];
