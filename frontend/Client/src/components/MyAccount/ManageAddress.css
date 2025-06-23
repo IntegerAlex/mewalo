@@ -1,0 +1,139 @@
+/* Base Styles */
+#ManageAddress {
+  width: 100%;
+  min-height: 70vh;
+  padding: 40px 0;
+}
+
+.ManageAddress-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* Form Styles */
+.manage-address-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.AddressForm-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group.full-width {
+  flex: 0 0 100%;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-control {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.AddressForm-btn {
+  background-color: var(--background-color);
+  color: var(--dark-plum);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.AddressForm-btn:hover {
+  background-color: var(--background-color4);
+  color: var(--white);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .manage-address-form {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .AddressForm-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    width: 100%;
+  }
+  
+  #ManageAddress {
+    padding: 20px 0;
+  }
+  
+  .manage-address-form {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .manage-address-form {
+    width: 95%;
+  }
+  
+  .form-control {
+    padding: 10px 12px;
+  }
+  
+  .AddressForm-btn {
+    width: 100%;
+  }
+}

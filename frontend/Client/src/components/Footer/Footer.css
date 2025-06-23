@@ -82,6 +82,7 @@
   list-style: none;
   padding: 0;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .footer-links li {
@@ -123,6 +124,11 @@
 }
 .animate-footer:nth-child(4) {
   animation-delay: 0.9s;
+}
+
+.footer-links-a{
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Footer Container */

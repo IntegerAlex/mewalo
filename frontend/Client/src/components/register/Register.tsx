@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
 
 // Define form data interface
@@ -11,7 +11,6 @@ interface RegisterFormData {
   lastName: string;
   userEmail: string;
   userMobile: string;
-
 }
 
 // Validation schema
@@ -34,6 +33,13 @@ const registerSchema = yup.object().shape({
 });
 
 const Register: React.FC = () => {
+  const apiPath = `${import.meta.env.VITE_API_URL}/product/auth/register`;
+  console.log(apiPath);
+
+  const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+
   const {
     register,
     handleSubmit,
@@ -51,8 +57,39 @@ const Register: React.FC = () => {
     }
   };
 
-  const onSubmit = (data: RegisterFormData) => {
+  const onSubmit =async (data: RegisterFormData) => {
+    //  setIsSubmitting(true);
+    // setSubmitError('');
+
+    // try{
+    //   const response = await fetch(apiPath,{
+    //     method:'POST',
+    //     headers:{
+    //       'Content-type':'application/json',
+    //     },
+    //     body: JSON.stringify(data),
+    //   })
+
+    //   const responseData = await response.json();
+
+    //   if(!response.ok){
+    //     throw new Error(responseData.message || 'Registration Failed')
+    //   }
+    //   console.log('Registration successful:', responseData);
+    //   // Redirect to login or dashboard after successful registration
+    //   navigate('/login');
+    // }
+    // catch(error)
+    // {
+    //   console.error('Registration error:', error);
+    //   setSubmitError(error instanceof Error ? error.message : 'Registration failed');
+    // }
+    // finally{
+    //   setIsSubmitting(false);
+    // }
     console.log(data);
+
+
     // Registration logic here
   };
 
@@ -60,6 +97,8 @@ const Register: React.FC = () => {
     <div className="register-container">
       <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
         <h1 className="register-title">Create Account</h1>
+
+        {/* {submitError && <p className="error-text">{submitError}</p>} */}
 
         <div className="form-row">
           <div className="form-group" style={{ flex: 1, marginRight: '15px' }}>

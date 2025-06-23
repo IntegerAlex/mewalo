@@ -25,6 +25,7 @@ interface Product {
   subcategory: string;
   price: string;
   isStock: boolean; 
+  
 }
 
 interface WishlistItem extends Product {

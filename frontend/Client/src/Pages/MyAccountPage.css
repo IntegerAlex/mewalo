@@ -1,0 +1,45 @@
+/* MyAccountPage.css */
+
+#MyAccountPage {
+    height: auto;
+    width: 100%;
+    padding: 80px 60px;
+    display: flex;
+    gap: 20px; /* Add gap between the two sections */
+}
+
+.myaccount-section-div {
+    border: 1px solid #e0e0e0;
+    height: 600px;
+    width: 30%;
+    border-radius: 8px;
+    padding: 20px;
+    background: #f9f9f9;
+}
+
+.myaccount-form-div {
+    border: 1px solid #e0e0e0;
+    height: auto;
+    width: 70%;
+    border-radius: 8px;
+    padding: 20px;
+    background: white;
+}
+
+.tab-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.tab-item:hover {
+    background-color: #f0f0f0;
+}
+
+.tab-item.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}

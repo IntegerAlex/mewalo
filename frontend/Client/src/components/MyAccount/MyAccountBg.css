@@ -1,0 +1,17 @@
+#MyAccountBg{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/images/aboutUsBg13.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.myAccountHeading{
+    color: var(--white);
+    font-size: 42px;
+    font-weight: 600;
+}

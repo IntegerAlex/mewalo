@@ -142,8 +142,12 @@ const Footer = () => {
           <Col md={3} sm={12} className="footer-box animate-footer">
             <h5 className="footer-heading">Contact</h5>
             <ul className="footer-links">
-              <li><FaMapMarkerAlt /> 123 Main Street, Delhi</li>
-              <li><FaEnvelope /> contact@company.com</li>
+              <li><FaMapMarkerAlt /> F-41/308, PHASE 2 T P NAGAR, LUCKNOW, UP 226006 </li>
+              <li><FaEnvelope /> 
+              {/* <a href="https://mail.google.com/mewalofoods@gmail.com" target="_black" className="footer-links-a"> */}
+              mewalofoods@gmail.com
+              {/* </a> */}
+              </li>
               <li><FaPhoneAlt /> +91-9876543210</li>
             </ul>
             <div className="footer-social">

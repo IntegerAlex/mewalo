@@ -15,6 +15,7 @@ import WishlistPage from "@/components/whishlist/WishlistPage";
 import Login from "@/components/login/Login";
 import Register from "@/components/register/Register";
 import SearchComp from "@/components/SearchComp/SearchComp";
+import MyAccountPage from "@/Pages/MyAccountPage";
 
 // import SignupSignin from "@/components/SIgnUp&SingIn/SignupSignin";
 
@@ -30,6 +31,7 @@ const routes: RouteObject[] = [
       { path: 'blog', element: <BlogPage /> },
       { path: 'shop', element: <ShopPage /> }, 
       { path: 'cart', element: <CartPage /> }, 
+      { path: 'myaccount', element : <MyAccountPage/>},
       // { path: 'login', element: <LoginRegister /> }, 
       { path: 'detail', element : <ProductDetailPage/>},
       { path: 'otp', element : <OtpInput/>},
