@@ -15,7 +15,7 @@ def create_app():
     
     # Create Flask app
     app = Flask(__name__)
-    CORS(app)
+    CORS(app, origins="*", allow_headers="*", methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"])
     
     
     
