@@ -1,25 +1,8 @@
 .footer {
   background-color: var(--background-color);
-  /* background: #FFFFFF; */
-  /* background-color: #ffd700 !important; */
-  /* background: #FFD700; */
-  /* background-color: #014034; */
-  /* color: white; */
   color: black;
-  /* padding: 30px 20px; */
-  /* font-size: 28px !important; */
-  /* border: solid 1px; */
-  padding-top: 80px;
+  padding-top: 40px;
   padding-left: 20px;
-
-  /* background-color: #FFEB7A; */
-  /* this one  */
-  /* background-color: #fff2a8; */
-  /* background-color: #FFF8CC; */
-  /* background-color: #FFFEF0; */
-  /* background-color: #FFF2A8;  two  */
-
-  /* background-color: #FFE34D !important;   */
 
 }
 

@@ -1,0 +1,108 @@
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.not-found-image {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  margin: 0 auto 20px;
+  animation: float 4s ease-in-out infinite;
+  display: block;
+}
+
+.not-found-title {
+  font-size: clamp(2rem, 10vw, 3rem);
+  margin: 0;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  line-height: 1.2;
+}
+
+.not-found-subtitle {
+  font-size: clamp(0.8rem, 4vw, 1.1rem);
+  margin: 15px 0;
+  font-weight: 400;
+  color: var(--accent-red);
+}
+
+.not-found-text {
+  font-size: clamp(0.7rem, 3vw, 1rem);
+  margin: 0 auto 30px;
+  line-height: 1.6;
+  color: red;
+  max-width: 600px;
+}
+
+.home-button {
+  padding: 12px 25px;
+  background: var(--white);
+  color: var(--primary-color);
+  border-radius: 50px;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--dark-plum);
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.home-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  background: var(--light-bg);
+  color: var(--dark-plum);
+}
+
+.home-button:active {
+  transform: translateY(1px);
+}
+
+/* Media Queries for specific adjustments */
+@media (max-width: 768px) {
+  .not-found-container {
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+  
+  .not-found-image {
+    max-width: 120px;
+    margin-bottom: 15px;
+  }
+  
+  .not-found-text {
+    margin-bottom: 25px;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .not-found-container {
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+  
+  .not-found-image {
+    max-width: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .home-button {
+    padding: 10px 20px;
+  }
+}

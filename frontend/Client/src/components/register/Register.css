@@ -5,6 +5,7 @@
   min-height: 100vh;
   background-color: var(--light-bg);
   padding: 20px;
+  padding-top: 80px;
 }
 
 .register-form {

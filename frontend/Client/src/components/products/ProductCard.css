@@ -25,7 +25,7 @@
      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
      background-color: var(--background-color2);
      text-align: center;
-     animation:  superAppear linear;
+     animation:  appear linear;
      animation-timeline: view();
      animation-range: entry 0 cover 40% ;
 }
@@ -173,8 +173,8 @@
 .productCard-Notify{
   text-align: center;
   margin: 15px auto;
-  width: 150px;
-  height: 60px;
+  width: 110px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -190,7 +190,7 @@
   cursor: pointer;
   outline: none;
   border: none;
-  font-size: 28px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--accent-red);
   display: flex;
@@ -242,7 +242,7 @@
 
 @keyframes appear {
   from{
-    opacity: 0;
+    /* opacity: 0; */
     /* scale: 0.5; */
     /* transform: translateX(100px); */
     /* clip-path: inset(100% 100% 0 0); */
@@ -250,9 +250,9 @@
     /* transform: perspective(500px) rotate3d(1, 0.5, 0, 60deg);  */
   }
   to{
-    opacity: 1;
-    /* scale: 1;
-    transform: translateX(0px);
+    /* opacity: 1; */
+    /* scale: 1; */
+    /* transform: translateX(0px);
     clip-path: inset(0 0 0 0); */
     /* filter: blur(0) contrast(1) hue-rotate(0); */
     /* transform: perspective(500px) rotate3d(0, 0, 0, 0); */
@@ -335,6 +335,20 @@
     margin-top: 5px;
 
   }
+
+  .productCard-Notify{
+  text-align: center;
+  margin: 5px auto;
+  width: 80px;
+  height: 30px;
+  border-radius: 12px;
+}
+
+
+.productCard-Notify-btn{
+  font-size: 12px;
+  font-weight: 300;
+}
 
 }
 

@@ -3,6 +3,7 @@ import { IoLocation } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import './ContactUsDetails.css'
+
 const ContactUsDetails = () => {
   return (
     <>
@@ -14,7 +15,7 @@ const ContactUsDetails = () => {
                     Address
                 </div>
                 <div className="contactusAddress-address">
-                    Andheri - Kurla Rd, Chakala, Andheri East, Mumbai, Maharashtra 400059
+                   F-41/308, PHASE 2 T P NAGAR, LUCKNOW, UP 226006
                 </div>
             </div>  
 
@@ -25,7 +26,7 @@ const ContactUsDetails = () => {
                    Phone
                 </div>
                 <div className="contactusPhone-number">
-                    +91 9876543212
+                    +91-73989 95141/ 77388 40135
                 </div>
             </div>  
 
@@ -36,7 +37,7 @@ const ContactUsDetails = () => {
                     Mail
                 </div>
                 <div className="contactusMail-address">
-                    mewalo.dryfruits@gmail.com
+                    mewalofoods@gmail.com
                 </div>
             </div>  
 

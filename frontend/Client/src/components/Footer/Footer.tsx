@@ -148,7 +148,7 @@ const Footer = () => {
               mewalofoods@gmail.com
               {/* </a> */}
               </li>
-              <li><FaPhoneAlt /> +91-9876543210</li>
+              <li><FaPhoneAlt /> +91-73989 95141/ 77388 40135</li>
             </ul>
             <div className="footer-social">
               <a href="https://www.facebook.com/61577412274360/posts/pfbid02mAn1g6KB3FnfPTYV7LmkRjs5pGUPqBzTd3hcZ4K8R7RiMdUZjzGCFABw5TmDwzMsl/?app=fbl" target="_blank"><FaFacebookF /></a>
